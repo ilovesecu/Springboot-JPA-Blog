@@ -1,0 +1,16 @@
+# 17강 - yml 설정하기에서 초기화
+server:
+  port: 9490
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/iloveblog?serverTimezone=Asia/Seoul
+    username: ilovepc
+    password: wjdtmdwn93!
