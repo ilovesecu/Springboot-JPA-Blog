@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
