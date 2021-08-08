@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +31,11 @@
 		<form id="loginForm" method="POST" action="/auth/loginProc">
 			<img class="mb-4" src="/img/utility/bootstrap-logo.svg" alt="" width="72" height="57">
 			<h1 class="h3 mb-3 fw-normal">로그인</h1>
-
+			<c:if test="${null ne requestScope.error}">
+				<div class="alert alert-danger" role="alert">
+				  ${requestScope.msg }
+				</div>
+			</c:if>
 			<div class="form-floating">
 				<input type="text" class="form-control" id="userId" name="userId" placeholder="userID"> <label for="userId">아이디</label>
 			</div>

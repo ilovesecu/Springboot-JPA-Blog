@@ -11,8 +11,8 @@ public class UserController {
 	public String loginForm(@RequestParam(value="error", required = false)String error,
 							@RequestParam(value="exception", required = false) String msg, 
 							ModelMap modelMap) {
-		System.out.println(error);
-		System.out.println(msg);
+		modelMap.addAttribute("error",error);
+		modelMap.addAttribute("msg",msg);
 		return "user/loginForm";
 	}
 	
