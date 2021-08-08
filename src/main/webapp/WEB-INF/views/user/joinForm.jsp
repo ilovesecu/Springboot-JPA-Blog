@@ -41,7 +41,7 @@
 <body class="text-center">
 	<main class="form-signin">
 		<img class="mb-4" src="/img/utility/bootstrap-logo.svg" alt="" width="72" height="57">
-		<form class="row g-3">
+		<form class="row g-3" id="joinForm">
 			<h1 class="h3 mb-3 fw-normal">회원가입</h1>
 
 			<div class="form-floating">
@@ -92,5 +92,8 @@
 	</main>
 	<script src="/js/user.js"></script>
 	<script src="/js/passwordCheck.js"></script>
+	<script>
+	join.init();
+	</script>
 </body>
 </html>

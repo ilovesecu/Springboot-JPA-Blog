@@ -9,3 +9,17 @@
   font-size: 85%;
 }
 
+.login{
+	position: relative;
+}
+.login--card{
+	display: none;
+	position: absolute;
+	left: -130px;
+	color:black;
+	border: 1px solid red;
+	z-index:999;
+}
+.show {
+	display: block;
+}

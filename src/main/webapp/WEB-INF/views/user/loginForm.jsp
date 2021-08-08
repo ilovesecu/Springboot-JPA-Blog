@@ -27,7 +27,7 @@
 </head>
 <body class="text-center">
 	<main class="form-signin">
-		<form>
+		<form id="loginForm" method="POST" action="#">
 			<img class="mb-4" src="/img/utility/bootstrap-logo.svg" alt="" width="72" height="57">
 			<h1 class="h3 mb-3 fw-normal">로그인</h1>
 
@@ -47,5 +47,9 @@
 			<p class="mt-5 mb-3 text-muted">&copy; ILoveBlog</p>
 		</form>
 	</main>
+	<script type="text/javascript" src="/js/user.js"></script>
+	<script>
+		login.init();
+	</script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,9 @@
 <link href="/css/index.css" rel="stylesheet" />
 </head>
 <body>
+	<sec:authorize access="isAuthenticated()">
+		<sec:authentication property="principal" var="principal"/>
+	</sec:authorize>
 	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 	  <symbol id="bootstrap" viewBox="0 0 118 94">
 	    <title>Bootstrap</title>
@@ -32,9 +36,19 @@
 						<input type="search" class="form-control" placeholder="Search..." aria-label="Search">
 					</form>
 					<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-						<li><a href="#" class="nav-link text-white"> <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-										<use xlink:href="#people-circle" /></svg> Guest
-						</a></li>
+						<li class="login">
+							<a href="#" class="nav-link text-white"> <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+								<use xlink:href="#people-circle" /></svg> Guest
+							</a>
+							<div class="card login--card" style="width: 19rem;">
+							  <div class="card-body">
+							    <h5 class="card-title">아직 로그인하지 않으셨군요?</h5>
+							    <p class="card-text">현재 게스트 모드입니다. 특정 기능에 제한이 있을 수 있습니다.</p>
+							    <a href="/auth/loginForm" class="btn btn-success">로그인</a>
+							    <a href="/auth/joinForm" class="btn btn-primary">회원가입</a>
+							  </div>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</div>
