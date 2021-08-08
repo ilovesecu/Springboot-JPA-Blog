@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,6 @@
 <body>
 	<sec:authorize access="isAuthenticated()">
 		<sec:authentication property="principal" var="principal"/>
-		<c:out value="principal"></c:out>
 	</sec:authorize>
 	
 	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -44,12 +43,22 @@
 								<use xlink:href="#people-circle" /></svg> Guest
 							</a>
 							<div class="card login--card" style="width: 19rem;">
-							  <div class="card-body">
-							    <h5 class="card-title">아직 로그인하지 않으셨군요?</h5>
-							    <p class="card-text">현재 게스트 모드입니다. 특정 기능에 제한이 있을 수 있습니다.</p>
-							    <a href="/auth/loginForm" class="btn btn-success">로그인</a>
-							    <a href="/auth/joinForm" class="btn btn-primary">회원가입</a>
-							  </div>
+								<div class="card-body">
+									<c:choose>
+										<c:when test="${empty principal }">
+											<h5 class="card-title">아직 로그인하지 않으셨군요?</h5>
+											<p class="card-text">현재 게스트 모드입니다. 특정 기능에 제한이 있을 수 있습니다.</p>
+											<a href="/auth/loginForm" class="btn btn-success">로그인</a>
+											<a href="/auth/joinForm" class="btn btn-primary">회원가입</a>
+										</c:when>
+										<c:otherwise>
+											<h5 class="card-title">${principal.user.name }님 환영합니다!</h5>
+											<p class="card-text">안녕하세요?</p>
+											<a href="/logout" class="btn btn-success">로그아웃</a>
+											<a href="/user/updateForm" class="btn btn-primary">회원정보</a>
+										</c:otherwise>
+									</c:choose>
+								</div>
 							</div>
 						</li>
 					</ul>
