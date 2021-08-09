@@ -10,6 +10,7 @@
 	crossorigin="anonymous">
 <link href="/css/headers.css" rel="stylesheet" />
 <link href="/css/index.css" rel="stylesheet" />
+<link href="/css/font-awesome/all.min.css" rel="stylesheet"/>
 </head>
 <body>
 	<sec:authorize access="isAuthenticated()">
@@ -38,6 +39,16 @@
 						<input type="search" class="form-control" placeholder="Search..." aria-label="Search">
 					</form>
 					<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+						<c:choose>
+						<c:when test="${not empty principal }">
+							<li class="menu-item d-flex flex-column">
+								<a href="/board/saveForm" class="nav-link text-white">
+									<i class="fas fa-feather-alt"></i>
+								</a>
+								<span>Write</span>
+							</li>
+						</c:when>
+						</c:choose>
 						<li class="login">
 							<a href="#" class="nav-link text-white"> <svg class="bi d-block mx-auto mb-1" width="24" height="24">
 								<use xlink:href="#people-circle" /></svg> Guest

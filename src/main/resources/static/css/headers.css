@@ -23,3 +23,6 @@
 .show {
 	display: block;
 }
+.menu-item i{
+	font-size: 1.1rem;
+}
