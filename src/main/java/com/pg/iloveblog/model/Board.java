@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,6 +19,9 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.LastModifiedDate;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.pg.iloveblog.model.converter.BooleanToYNConverter;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -47,9 +51,14 @@ public class Board {
 	@ManyToOne //Many:board, One:User
 	private User user; //누가 이 글을 적었는지
 	
-	
+	@JsonIgnoreProperties({"board"})
 	@OneToMany(mappedBy = "board", fetch = FetchType.EAGER)  //mappedBy = FK만들지 마세요!
 	private List<Reply> reply;
+	
+	@JsonIgnoreProperties({"board"})
+	@OneToMany(mappedBy = "board", fetch = FetchType.LAZY)
+	@Convert(converter = BooleanToYNConverter.class)
+	private List<AttachFile> attachFiles;
 	
 	@CreationTimestamp //insert될때 현재 시간이 자동으로 들어가도록 설정
 	private Timestamp createDate;

@@ -1,6 +1,7 @@
 package com.pg.iloveblog.controller.api;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -33,6 +34,7 @@ public class BoardApiController {
 	public ResponseDTO<Map<String,Object>> save(@RequestBody Board board, @AuthenticationPrincipal PrincipalDetail princial){
 		Map<String,Object> result = new HashMap<>();
 		result.put("response","success");
+		System.out.println(board);
 		Board resultBoard = boardService.글쓰기(board,princial.getUser());
 		result.put("result", resultBoard);
 		return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(), result);

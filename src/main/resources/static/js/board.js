@@ -6,10 +6,12 @@ let board = {
 	boardSave: ()=>{
 		const $title = document.querySelector("#title");
 		const $content = document.querySelector("#content");
+		console.log('attachList',attachList);
 		//HTTP BODY
 		const body = {
 			title: $title.value,
-			content: $content.value
+			content: $content.value,
+			attachFiles : attachList //첨부된 이미지 파일
 		};
 		
 		//HTTP HEADER

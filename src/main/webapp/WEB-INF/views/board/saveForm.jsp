@@ -17,6 +17,8 @@
 	<button id="btn-save" class="btn btn-primary">글쓰기</button>
 </div>
 <script>
+	const form = document.querySelector("form");
+	const attachList = []; //첨부파일 이미지 리스트
 	$('.summernote').summernote({
 		height: 600,
 		fontNames : [ '맑은고딕', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', ],
@@ -59,6 +61,7 @@
 		    		//console.log(uploadPath+"/"+uuid+"_"+fileName);
 		    		const filePath = "/summernoteImage/"+uploadPath+"/"+uuid+"_"+fileName;
 		    		$(el).summernote('insertImage', filePath);
+		    		attachList.push(data);
 		    	});
 		    	
 		  	} else {

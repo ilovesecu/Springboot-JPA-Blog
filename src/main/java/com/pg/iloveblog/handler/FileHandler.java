@@ -33,7 +33,13 @@ public class FileHandler {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return new AttachFile(multipartFile.getOriginalFilename(), uploadFolderPath,uuid.toString(), true);
+		AttachFile resultFile = 
+				AttachFile.builder().fileName(multipartFile.getOriginalFilename())
+									.uploadPath(uploadFolderPath)
+									.uuid(uuid.toString())
+									.image(true).build();
+									//.image("Y").build();
+		return resultFile;
 	}
 	
 	//날짜 형식의 폴더 경로를 반환하는 메소드.
