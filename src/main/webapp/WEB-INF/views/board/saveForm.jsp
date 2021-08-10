@@ -52,7 +52,13 @@
 			if (res.status === 200 || res.status === 201) {
 		    	res.json().then(json => {
 		    		console.log(json);
-		    		$(el).summernote('insertImage', data.url);
+		    		const data = json.data.response;
+		    		const uploadPath = data.uploadPath;
+		    		const uuid = data.uuid;
+		    		const fileName = data.fileName;
+		    		//console.log(uploadPath+"/"+uuid+"_"+fileName);
+		    		const filePath = "/summernoteImage/"+uploadPath+"/"+uuid+"_"+fileName;
+		    		$(el).summernote('insertImage', filePath);
 		    	});
 		    	
 		  	} else {
