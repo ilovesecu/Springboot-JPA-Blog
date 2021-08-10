@@ -18,10 +18,48 @@
 </div>
 <script>
 	$('.summernote').summernote({
-	  placeholder: '',
-	  tabsize: 2,
-	  height: 300
+		height: 600,
+		fontNames : [ '맑은고딕', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', ],
+		fontNamesIgnoreCheck : [ '맑은고딕' ],
+		focus: true,
+		placeholder: '내용을 입력해주세요',
+		callbacks: {
+			onImageUpload: function(files, editor, welEditable) {
+	            for (let i = files.length - 1; i >= 0; i--) {
+	            	sendFile(files[i], this);
+	            }
+	        },
+	        onPaste: function (e) {
+				var clipboardData = e.originalEvent.clipboardData;
+				if (clipboardData && clipboardData.items && clipboardData.items.length) {
+					var item = clipboardData.items[0];
+					if (item.kind === 'file' && item.type.indexOf('image/') !== -1) {
+						e.preventDefault();
+					}
+				}
+			}
+		}
 	});
+	
+	const sendFile = (file, el)=>{
+		const formData = new FormData();
+		formData.append('file',file);
+		
+		fetch('/api/file', {
+		  method: 'POST', // POST 메소드 지정
+		  body: formData, // formData를 데이터로 설정
+		}).then((res) => {
+			if (res.status === 200 || res.status === 201) {
+		    	res.json().then(json => {
+		    		console.log(json);
+		    		$(el).summernote('insertImage', data.url);
+		    	});
+		    	
+		  	} else {
+		    	console.error(res.statusText);
+		  	}
+		}).catch(err => console.error(err));
+	}
 </script>
 <script src="/js/board.js"></script>
 <%@ include file="../layout/footer.jsp"%>
