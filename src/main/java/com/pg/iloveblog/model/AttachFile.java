@@ -14,9 +14,12 @@ import com.pg.iloveblog.model.converter.BooleanToYNConverter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,4 +41,12 @@ public class AttachFile {
 	@ManyToOne
 	@JoinColumn(name="boardId")
 	private Board board;
+
+	//계속 무한참조가 일어나서 board를 빼고 오버라이딩을 했다.
+	@Override
+	public String toString() {
+		return "[no:"+no+", fileName:"+fileName+", uploadPath:"+uploadPath+", uuid:"+uuid+", image:"+image+"]";
+	}
+	
+	
 }
