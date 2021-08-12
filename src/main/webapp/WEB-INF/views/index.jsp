@@ -6,6 +6,22 @@
 	<div class="row gx-4 gx-lg-5 justify-content-center">
 		<div class="col-md-10 col-lg-8 col-xl-7">
 			<!-- Post preview-->
+			<c:forEach var="board" items="${boards}">
+				<div class="post-preview">
+					<a href="post.html">
+						<h2 class="post-title">${board.title }</h2>
+						<h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
+					</a>
+					<p class="post-meta">
+						Posted by <a href="#!">${board.user.id }</a> on ${board.dateDisplayed}
+					</p>
+				</div>
+				<!-- Divider-->
+				<hr class="my-4" />
+			</c:forEach>
+		
+		
+			<!-- Post preview-->
 			<div class="post-preview">
 				<a href="post.html">
 					<h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>

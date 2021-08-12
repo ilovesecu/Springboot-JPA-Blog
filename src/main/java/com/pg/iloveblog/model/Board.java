@@ -1,7 +1,7 @@
 package com.pg.iloveblog.model;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -15,9 +15,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -62,7 +64,12 @@ public class Board {
 	
 	@CreationTimestamp //insert될때 현재 시간이 자동으로 들어가도록 설정
 	private Timestamp createDate;
+	//private Date createDate;
 	
-	@LastModifiedDate
-	private LocalDateTime updateDate;
+	@UpdateTimestamp //update될때 현재 시간이 자동으로 들어가도록 설정
+	private Timestamp updateDate;
+	//private Date updateDate;
+	
+	@Transient //테이블에 적용하지 마세요!
+	private String dateDisplayed;  //표시되는 날짜(yyyy-MM-dd or HH:mm:ss)
 }
