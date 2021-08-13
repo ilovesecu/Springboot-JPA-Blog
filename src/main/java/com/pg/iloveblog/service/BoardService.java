@@ -6,21 +6,29 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pg.iloveblog.dto.BoardPagenationDTO;
 import com.pg.iloveblog.model.AttachFile;
 import com.pg.iloveblog.model.Board;
 import com.pg.iloveblog.model.User;
 import com.pg.iloveblog.repository.AttachFileRepository;
 import com.pg.iloveblog.repository.BoardRepository;
 
+import jdk.internal.org.jline.utils.Log;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class BoardService {
 	@Resource
 	private BoardRepository boardRepository;
 	@Resource
 	private AttachFileRepository attachFileRepository;
+	private final int DISPLAY_PAGE_NUMBER = 10;
 	
 	@Transactional
 	public Board 글쓰기(Board board, User user) {
@@ -33,9 +41,25 @@ public class BoardService {
 	}
 	
 	@Transactional(readOnly = true)
-	public List<Board> 글목록(){
-		//return boardRepository.findAllPost();
-		List<Board>boards=boardRepository.findAll();
+	public BoardPagenationDTO 글목록(Pageable pageable){
+		Page<Board> boards = boardRepository.findAll(pageable);
+		//현재페이지
+		int currentPage = boards.getPageable().getPageNumber()+1; //0부터 시작(+1해준 이유가 0부터 시작해서)
+		//총 게시물 수
+		long totalContents = boards.getTotalElements();
+		//페이지당 보여지는 수
+		int pageSize = boards.getPageable().getPageSize();
+		
+		//페이징
+		int endPage = (int)Math.ceil((double)currentPage/DISPLAY_PAGE_NUMBER)*DISPLAY_PAGE_NUMBER;
+		int startPage = endPage - DISPLAY_PAGE_NUMBER + 1; 
+		int realEndPage = (int)Math.ceil((double)totalContents/pageSize);
+		log.debug("currentPage:%d, totalContents:%d, ",currentPage,totalContents);
+		log.debug("endPage:%d, startPage:%d, realEndpage:%d \n",endPage,startPage,realEndPage);
+		if(realEndPage < endPage) endPage = realEndPage;
+		boolean isNext = realEndPage==endPage?false:true;//Next버튼 유무 (true:유, false:무)
+		boolean isPrev = endPage <= DISPLAY_PAGE_NUMBER?false:true; //Prev버튼 유무(true:유, false:무)
+		
 		SimpleDateFormat sdfOld = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat sdfToDay = new SimpleDateFormat("HH:mm:ss");
 		String dateDisplayed = null;
@@ -55,7 +79,10 @@ public class BoardService {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return boards;
+		BoardPagenationDTO boardPagenationDTO = BoardPagenationDTO.builder()
+				.page(boards).endPage(endPage).startPage(startPage)
+				.isNext(isNext).isPrev(isPrev).build();
+		return boardPagenationDTO;
 	}
 	
 	private List<AttachFile> 첨부파일저장(List<AttachFile> attachFiles, Board board){
