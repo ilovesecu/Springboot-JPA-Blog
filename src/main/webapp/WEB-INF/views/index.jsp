@@ -8,7 +8,7 @@
 			<!-- Post preview-->
 			<c:forEach var="board" items="${boards.content}">
 				<div class="post-preview">
-					<a href="post.html">
+					<a href="/board/${board.no}">
 						<h2 class="post-title">${board.title }</h2>
 						<h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
 					</a>

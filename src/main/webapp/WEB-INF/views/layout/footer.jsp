@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- Footer-->
-<footer class="border-top">
+<footer class="py-5 bg-dark border-top">
 	<div class="container px-4 px-lg-5">
-		<div class="jumbotron text-center" style="margin-bottom: 0">
+		<div class="jumbotron text-center text-white" style="margin-bottom: 0">
 			<p>Created by JS</p>
 			<p>📞010-1234-5678</p>
 			<p>🏴광주광역시 동구</p>

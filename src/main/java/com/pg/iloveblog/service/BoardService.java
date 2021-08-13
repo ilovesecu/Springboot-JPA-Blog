@@ -85,6 +85,14 @@ public class BoardService {
 		return boardPagenationDTO;
 	}
 	
+	@Transactional(readOnly = true)
+	public Board 글상세보기(int no) {
+		Board board = boardRepository.findById(no).orElseThrow(()->{
+			return new IllegalArgumentException("글상세보기 실패: 해당 no를 찾을 수 없습니다.");
+		});
+		return board;
+	}
+	
 	private List<AttachFile> 첨부파일저장(List<AttachFile> attachFiles, Board board){
 		for(int i=0; i<attachFiles.size(); i++) {
 			AttachFile attachFile = attachFiles.get(i);

@@ -9,6 +9,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.pg.iloveblog.dto.BoardPagenationDTO;
 import com.pg.iloveblog.model.Board;
@@ -19,6 +20,7 @@ public class BoardController {
 	@Resource
 	BoardService boardService;
 	
+	//게시글 목록보기
 	@GetMapping({"/",""})
 	public String index(ModelMap modelMap, 
 				@PageableDefault(size=2, sort="no", direction = Sort.Direction.DESC)Pageable pageable ) {
@@ -32,6 +34,14 @@ public class BoardController {
 		return "index";
 	}
 	
+	//게시글 상세보기
+	@GetMapping("/board/{no}")
+	public String detail(@PathVariable int no,ModelMap modelMap) {
+		modelMap.addAttribute("board",boardService.글상세보기(no));
+		return "board/detail";
+	}
+	
+	//게시글 저장하기
 	@GetMapping("/board/saveForm")
 	public String saveForm() {
 		return "board/saveForm";
