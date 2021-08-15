@@ -88,9 +88,19 @@ public class BoardService {
 	@Transactional(readOnly = true)
 	public Board 글상세보기(int no) {
 		Board board = boardRepository.findById(no).orElseThrow(()->{
-			return new IllegalArgumentException("글상세보기 실패: 해당 no를 찾을 수 없습니다.");
+			return new IllegalArgumentException("글상세보기 실패: 해당 no를 찾을 수 없습니다. no:"+no);
 		});
 		return board;
+	}
+	
+	@Transactional
+	public int 글삭제하기(int no) {
+		try {
+			boardRepository.deleteById(no);
+			return 1;
+		}catch(Exception e) {
+			return 0;
+		}
 	}
 	
 	private List<AttachFile> 첨부파일저장(List<AttachFile> attachFiles, Board board){

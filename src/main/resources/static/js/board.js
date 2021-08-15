@@ -46,8 +46,30 @@ let board = {
 			}
 		}).catch(err => console.error(err));
 	},
-	boardDeleteById:()=>{
-		console.log("삭제 나옴");
+	boardDeleteById:(event)=>{
+		console.log(event.target);
+		console.log(event.target.dataset.boardNo);
+		const boardNo = event.target.dataset.boardNo;
+		//Request To Server
+		fetch(`/api/board/${boardNo}`, {
+			method: 'DELETE'
+		}).then((res) => {
+			if (res.status === 200 || res.status === 201) {
+				res.json().then(json => {
+					if (json.status === 200) {
+						const deleteCompleteModal = new bootstrap.Modal(document.querySelector('#deleteCompleteModal'), {
+							keyboard: false
+						});
+						deleteCompleteModal.show();
+						document.querySelector("#goMainBtn").addEventListener("click",function(){
+							location.href="/";
+						});
+					}
+				});
+			} else {
+				console.error(res.statusText);
+			}
+		}).catch(err => console.error(err));
 	},
 	shownBsModalHandler: ()=>{ //모달창 생성 시
 		const screenBlock = document.querySelector("#screenBlock");

@@ -8,6 +8,8 @@ import javax.annotation.Resource;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,10 @@ import com.pg.iloveblog.model.AttachFile;
 import com.pg.iloveblog.model.Board;
 import com.pg.iloveblog.service.BoardService;
 
+import jdk.internal.org.jline.utils.Log;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 @RequestMapping(path="/api")
 public class BoardApiController {
@@ -34,10 +40,15 @@ public class BoardApiController {
 	public ResponseDTO<Map<String,Object>> save(@RequestBody Board board, @AuthenticationPrincipal PrincipalDetail princial){
 		Map<String,Object> result = new HashMap<>();
 		result.put("response","success");
-		System.out.println(board);
+		Log.debug(board);
 		Board resultBoard = boardService.글쓰기(board,princial.getUser());
 		result.put("result", resultBoard);
 		return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(), result);
+	}
+	
+	@DeleteMapping("/board/{no}")
+	public ResponseDTO<Integer> deleteBoardByNo(@PathVariable int no){
+		return new ResponseDTO<Integer>(HttpStatus.OK.value(),boardService.글삭제하기(no));
 	}
 	
 	@PostMapping("/file")
