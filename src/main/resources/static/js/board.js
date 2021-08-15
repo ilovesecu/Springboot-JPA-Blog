@@ -1,7 +1,17 @@
 let board = {
 	init: function(){
 		const btnSave=document.querySelector("#btn-save");
-		btnSave.addEventListener("click",this.boardSave);
+		const btnDelete = document.querySelector("#btn-delete");
+		const deleteModal = document.querySelector("#deleteModal"); 
+		if(btnSave!=null)
+			btnSave.addEventListener("click",this.boardSave);
+		if(btnDelete!=null)
+			btnDelete.addEventListener("click",this.boardDeleteById);
+		if(deleteModal!=null){
+			deleteModal.addEventListener("show.bs.modal",this.shownBsModalHandler);
+			deleteModal.addEventListener("hide.bs.modal",this.hideBsModalHandler);
+		}
+		
 	},
 	boardSave: ()=>{
 		const $title = document.querySelector("#title");
@@ -35,6 +45,17 @@ let board = {
 				console.error(res.statusText);
 			}
 		}).catch(err => console.error(err));
+	},
+	boardDeleteById:()=>{
+		console.log("삭제 나옴");
+	},
+	shownBsModalHandler: ()=>{ //모달창 생성 시
+		const screenBlock = document.querySelector("#screenBlock");
+		screenBlock.style.display="block";
+	},
+	hideBsModalHandler:()=>{ //모달창 사라짐
+		const screenBlock = document.querySelector("#screenBlock");
+		screenBlock.style.display="none";
 	}
 }
 board.init();
