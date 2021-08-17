@@ -34,7 +34,7 @@
 			<div class="d-flex justify-content-end">
 				<button class="btn btn-secondary" onclick="history.back()">돌아가기</button>
 				<c:if test="${principal.user.id == board.user.id }">
-					<button id="btn-update" class="btn btn-warning">수정</button>
+					<a href="/board/${board.no}/updateForm" class="btn btn-warning">수정</a>
 					<button data-bs-toggle="modal" data-bs-target="#deleteModal" class="btn btn-danger">삭제</button>
 				</c:if>
 			</div>

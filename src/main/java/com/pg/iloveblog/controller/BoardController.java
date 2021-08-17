@@ -41,6 +41,13 @@ public class BoardController {
 		return "board/detail";
 	}
 	
+	//게시글 수정하기
+	@GetMapping("/board/{no}/updateForm")
+	public String update(@PathVariable int no, ModelMap modelMap) {
+		modelMap.addAttribute("board",boardService.글상세보기(no));
+		return "board/updateForm";
+	}
+	
 	//게시글 저장하기
 	@GetMapping("/board/saveForm")
 	public String saveForm() {

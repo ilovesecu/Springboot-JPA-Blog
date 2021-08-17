@@ -11,6 +11,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,10 +41,15 @@ public class BoardApiController {
 	public ResponseDTO<Map<String,Object>> save(@RequestBody Board board, @AuthenticationPrincipal PrincipalDetail princial){
 		Map<String,Object> result = new HashMap<>();
 		result.put("response","success");
-		Log.debug(board);
 		Board resultBoard = boardService.글쓰기(board,princial.getUser());
 		result.put("result", resultBoard);
 		return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(), result);
+	}
+	@PutMapping("/board/{no}")
+	public ResponseDTO<Integer> update(@RequestBody Board board, @PathVariable int no){
+		System.out.println(board);
+		int result = boardService.글수정하기(board,no);
+		return new ResponseDTO<Integer>(HttpStatus.OK.value(),result);
 	}
 	
 	@DeleteMapping("/board/{no}")

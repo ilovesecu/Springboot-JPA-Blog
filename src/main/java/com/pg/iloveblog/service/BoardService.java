@@ -1,5 +1,8 @@
 package com.pg.iloveblog.service;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -94,13 +97,57 @@ public class BoardService {
 	}
 	
 	@Transactional
+	public int 글수정하기(Board reqBoard, int no) {
+		try {
+			//영속화 시키기
+			Board board = boardRepository.findById(no).orElseThrow(()->{
+				return new IllegalArgumentException("글수정하기 실패 해당 번호의 글을 찾을 수 없습니다. no:"+no);
+			});
+			board.setTitle(reqBoard.getTitle());
+			board.setContent(reqBoard.getContent());
+			
+			List<AttachFile> resultFiles = 첨부파일저장(reqBoard.getAttachFiles(), board);
+			//데이터베이스에서 파일 삭제
+			for(AttachFile file:reqBoard.getDeleteFiles()){
+				attachFileRepository.deleteByUuidAndFileName(file.getUuid(), file.getFileName());
+			}
+			첨부파일삭제(reqBoard.getDeleteFiles()); //파일 시스템에서 파일 삭제
+			return 1;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	@Transactional //첨부파일과 댓글도 모두 삭제하도록 구현해야한다.
 	public int 글삭제하기(int no) {
 		try {
-			boardRepository.deleteById(no);
+			List<AttachFile> attahcFiles=attachFileRepository.findWithBoardId(no);
+			boardRepository.deleteById(no); //cascade type을 ALL로 해놔서 글 삭제 시 첨부파일 DB도 같이 삭제.
+			첨부파일삭제(attahcFiles);
+			System.out.println(attahcFiles);
 			return 1;
 		}catch(Exception e) {
 			return 0;
 		}
+	}
+	
+	private void 첨부파일삭제(List<AttachFile> attahcFiles) {
+		if(attahcFiles == null || attahcFiles.size() == 0) {
+			return ;
+		}
+		log.debug("delete attach files................");
+		
+		attahcFiles.forEach(attach -> {
+			try {
+				Path file = Paths.get("C:\\springboot\\upload",attach.getUploadPath(),
+						attach.getUuid()+"_"+attach.getFileName());
+				Files.deleteIfExists(file);
+				//이미지파일 썸네일 지우기는 생략
+			}catch(Exception e) {
+				log.error("delete file error:"+e.getMessage());
+			}
+		});
 	}
 	
 	private List<AttachFile> 첨부파일저장(List<AttachFile> attachFiles, Board board){

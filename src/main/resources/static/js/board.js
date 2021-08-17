@@ -2,7 +2,8 @@ let board = {
 	init: function(){
 		const btnSave=document.querySelector("#btn-save");
 		const btnDelete = document.querySelector("#btn-delete");
-		const deleteModal = document.querySelector("#deleteModal"); 
+		const deleteModal = document.querySelector("#deleteModal");
+		const btnUpdate = document.querySelector("#btn-update"); 
 		if(btnSave!=null)
 			btnSave.addEventListener("click",this.boardSave);
 		if(btnDelete!=null)
@@ -11,7 +12,8 @@ let board = {
 			deleteModal.addEventListener("show.bs.modal",this.shownBsModalHandler);
 			deleteModal.addEventListener("hide.bs.modal",this.hideBsModalHandler);
 		}
-		
+		if(btnUpdate!=null)
+			btnUpdate.addEventListener("click",()=>this.boardUpdate(this));
 	},
 	boardSave: ()=>{
 		const $title = document.querySelector("#title");
@@ -42,13 +44,12 @@ let board = {
 					}
 				});
 			} else {
+				alert('글쓰기 실패.');
 				console.error(res.statusText);
 			}
-		}).catch(err => console.error(err));
+		}).catch(err => alert('글쓰기 실패.',err));
 	},
 	boardDeleteById:(event)=>{
-		console.log(event.target);
-		console.log(event.target.dataset.boardNo);
 		const boardNo = event.target.dataset.boardNo;
 		//Request To Server
 		fetch(`/api/board/${boardNo}`, {
@@ -71,13 +72,85 @@ let board = {
 			}
 		}).catch(err => console.error(err));
 	},
-	shownBsModalHandler: ()=>{ //모달창 생성 시
+	boardUpdate: function(that){
+		that.fileSelector(); //지워질 파일을 선택
+		const $title = document.querySelector("#title");
+		const $content = document.querySelector("#content");
+		const no = document.querySelector("#no").value; //어떤 글을 수정할지 서버에게 전송
+		
+		//HTTP BODY
+		const body = {
+			title: $title.value,
+			content: $content.value,
+			attachFiles : attachList, //첨부된 이미지 파일
+			deleteFiles : deleteAttachList
+		};
+		
+		//HTTP HEADER
+		const headers = new Headers();
+		headers.append('Content-type','application/json; charset=utf-8');
+		console.log(body);
+		//Request To Server
+		fetch(`/api/board/${no}`, {
+			method: 'PUT',
+			body:JSON.stringify(body),
+			headers: headers, // 이 부분은 따로 설정하고싶은 header가 있다면 넣으세요
+		}).then((res) => {
+			if (res.status === 200 || res.status === 201) {
+				res.json().then(json => {
+					if(json.status===200){
+						alert('수정이 완료되었습니다.');
+						location.href="/";
+					}
+				});
+			} else {
+				alert('수정 실패.');
+				console.error(res.statusText);
+			}
+		}).catch(err => alert('수정 실패.',err));
+		
+	},
+	shownBsModalHandler: ()=>{ //삭제 모달창 생성 시
 		const screenBlock = document.querySelector("#screenBlock");
 		screenBlock.style.display="block";
 	},
-	hideBsModalHandler:()=>{ //모달창 사라짐
+	hideBsModalHandler:()=>{ //삭제 모달창 사라짐
 		const screenBlock = document.querySelector("#screenBlock");
 		screenBlock.style.display="none";
+	},
+	fileSelector:()=>{ //지워질 파일을 선택하는 함수
+		const allImgs = []; //모든 이미지가 들어갈 리스트
+		const $noteEditable = document.querySelector(".note-editable");
+		const $imgs = $noteEditable.querySelectorAll("img");
+		$imgs.forEach((v)=>{
+			console.log(decodeURI(v.src.split('/summernoteImage/')[1]));
+			allImgs.push(decodeURI(v.src.split('/summernoteImage/')[1]));
+		});
+		//에디터의 모든 이미지와 기존 이미지를 비교하여 기존 이미지들이 전체 이미지리스트에 없다면 삭제 리스트에 넣는다.
+		for(let i=0; i<originalAttachList.length; i++){
+			let flag = true;
+			for(let j=0; j<allImgs.length; j++){
+				if(originalAttachList[i] === allImgs[j]){
+					flag = false;
+					break;
+				}
+			}
+			if(flag && !deleteAttachList.includes(originalAttachList[i])){
+				//console.log(originalAttachList[i]);
+				const dateIndex = originalAttachList[i].lastIndexOf('/');
+				const uuidIndex = originalAttachList[i].indexOf('_');
+				/*console.log('date:',originalAttachList[i].substring(0,dateIndex));
+				console.log('uuid:',originalAttachList[i].substring(dateIndex+1,uuidIndex));
+				console.log('name:',originalAttachList[i].substring(uuidIndex+1));*/
+				const file = {
+					'fileName': originalAttachList[i].substring(uuidIndex+1),
+					'uploadPath': originalAttachList[i].substring(0,dateIndex),
+					'uuid': originalAttachList[i].substring(dateIndex+1,uuidIndex)
+				};
+				deleteAttachList.push(file);
+			}
+		}
+		
 	}
 }
 board.init();

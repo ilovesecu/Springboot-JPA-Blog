@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
@@ -58,7 +59,7 @@ public class Board {
 	private List<Reply> reply;
 	
 	@JsonIgnoreProperties({"board"})
-	@OneToMany(mappedBy = "board", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "board", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@Convert(converter = BooleanToYNConverter.class)
 	private List<AttachFile> attachFiles;
 	
@@ -72,4 +73,6 @@ public class Board {
 	
 	@Transient //테이블에 적용하지 마세요!
 	private String dateDisplayed;  //표시되는 날짜(yyyy-MM-dd or HH:mm:ss)
+	@Transient //테이블에 적용하지 마세요!
+	private List<AttachFile> deleteFiles;  //삭제될 파일
 }
