@@ -147,9 +147,13 @@ const update = {
 						}
 						alert('회원수정에 성공하였습니다.');
 						location.href="/";
+					}else if(json.status===403){
+						alert('회원수정 실패');
+						console.log(json);
+						return ;	
 					}
 				});
-			} else {
+			}else {
 				console.error(res.statusText);
 			}
 		}).catch(err => console.error(err));

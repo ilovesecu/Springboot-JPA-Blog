@@ -44,9 +44,7 @@ public class UserApiController {
 			result.put("response","fail");
 			return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(),result);
 		}
-		result.put("response","success");
-		userService.회원수정(reqUser);
-		return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(),result);
+		return userService.회원수정(reqUser,result);
 	}
 	
 	//회원가입 빈칸 예외처리
