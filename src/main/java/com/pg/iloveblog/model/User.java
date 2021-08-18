@@ -9,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -47,4 +48,7 @@ public class User {
 	
 	@CreationTimestamp //insert될 때의 시간이 자동으로 입력된다.
 	private Timestamp createDate; //가입날짜
+	
+	@Transient //컬럼아니에요!
+	private String oldPassword;
 }

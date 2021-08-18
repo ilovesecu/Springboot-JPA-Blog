@@ -45,7 +45,7 @@ const join = {
 			if (res.status === 200 || res.status === 201) {
 				res.json().then(json => {
 					if(json.status===200){
-						if(json.response === "fail"){
+						if(json.data.response === "fail"){
 							console.log(json);
 							alert('회원가입 실패');	
 							return ;
@@ -86,6 +86,7 @@ const join = {
 			$email.focus();
 			return false;
 		}
+		return true;
 		/*
 		//비밀번호 체크 (근데 이미 회원가입 버튼을 disabled 시키니까 사용되지는 않을것.)
 		if ($userPassword.value !== $userPasswordConfirm.value) {
@@ -105,10 +106,81 @@ const update = {
 	},
 	updateProc:(that,event)=>{
 		event.preventDefault();
+		const userNo = document.querySelector("#userNo").value; //어떤 회원인지 hidden으로 숨겨놓음.
+		const userId = document.querySelector("#userId").value;
+		const userPassword = document.querySelector("#userPassword").value;
+		const userPasswordConfirm = document.querySelector("#userPasswordConfirm").value;
+		const username = document.querySelector("#username").value;
+		const email = document.querySelector("#email").value;
+		const oldPassword = document.querySelector("#oldPassword").value;
+		
 		const exceptionCheckResult = that.exceptionCheck();
+		if(!exceptionCheckResult) return ;
+		
+		//HTTP BODY
+		const body = {
+			no:userNo,
+			id: userId,
+			password: userPassword, 
+			name:username,
+			email:email,
+			oldPassword:oldPassword
+		};
+		
+		//HTTP HEADER
+		const headers = new Headers();
+		headers.append('Content-type','application/json; charset=utf-8');
+		
+		//Request To Server
+		fetch('/user', {
+			method: 'PUT',
+			body:JSON.stringify(body),
+			headers: headers, // 이 부분은 따로 설정하고싶은 header가 있다면 넣으세요
+		}).then((res) => {
+			if (res.status === 200 || res.status === 201) {
+				res.json().then(json => {
+					if(json.status===200){
+						if(json.data.response === "fail"){
+							console.log(json);
+							alert('회원수정 실패');	
+							return ;
+						}
+						alert('회원수정에 성공하였습니다.');
+						location.href="/";
+					}
+				});
+			} else {
+				console.error(res.statusText);
+			}
+		}).catch(err => console.error(err));
 	},
 	exceptionCheck:()=>{
+		const $userId = document.querySelector("#userId");
+		const $username = document.querySelector("#username");
+		const $email = document.querySelector("#email");
+		const $oldPassword = document.querySelector("#oldPassword");
 		
+		if($userId.value == "" || $userId.value==null){
+			alert('아이디를 입력해주세요.');
+			$userId.focus();
+			return false;
+		}
+		if($username.value == "" || $username.value == null){
+			alert('이름을 입력해주세요.');
+			$username.focus();
+			return false;
+		}
+		if($email.value == "" || $email.value == null){
+			alert('이메일을 입력해주세요.');
+			$email.focus();
+			return false;
+		}
+		if($oldPassword.value == "" || $oldPassword.value == null){
+			alert('기존 비밀번호를 입력해주세요.');
+			$oldPassword.focus();
+			return false;
+		}
+		return true;
 	}
 }
 

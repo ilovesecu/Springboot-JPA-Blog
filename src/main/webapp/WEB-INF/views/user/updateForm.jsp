@@ -43,7 +43,7 @@
 		<img class="mb-4" src="/img/utility/bootstrap-logo.svg" alt="" width="72" height="57">
 		<form class="row g-3" id="updateForm">
 			<h1 class="h3 mb-3 fw-normal">회원수정</h1>
-
+			<input type="hidden" id="userNo" value="${principal.user.no }"/>
 			<div class="form-floating">
 				<input type="text" class="form-control" id="userId" name="userId" placeholder="UserID" value="${principal.user.id }" readonly> <label for="userId">아아디</label>
 			</div>
@@ -95,7 +95,7 @@
 	<script src="/js/user.js"></script>
 	<script src="/js/passwordCheck.js"></script>
 	<script>
-	join.init();
+	update.init();
 	</script>
 </body>
 </html>
