@@ -5,9 +5,9 @@
 const join = {
 	init: function() {
 		const $joinForm = document.querySelector("#joinForm");
-		$joinForm.addEventListener("submit", this.joinProc);
+		$joinForm.addEventListener("submit", (event)=>{this.joinProc(this,event)});
 	},
-	joinProc: (event) => {
+	joinProc: (that,event) => {
 		event.preventDefault();
 		const $userId = document.querySelector("#userId");
 		const $userPassword = document.querySelector("#userPassword");
@@ -20,14 +20,10 @@ const join = {
 		const userPasswordConfirm = $userPasswordConfirm.value;
 		const username = $username.value;
 		const email = $email.value;
-
-		//비밀번호 체크 (근데 이미 회원가입 버튼을 disabled 시키니까 사용되지는 않을것.)
-		if (userPassword !== userPasswordConfirm) {
-			const $error_confirmpassword = document.querySelector("#error-confirmpassword"); //패스워드 다르다는 표시
-			$userPasswordConfirm.classList.add(".is-invalid"); //빨간색 테두리 표시
-			$error_confirmpassword.classList.remove("hide"); //패스워드 다르다는 표시
-			$userPasswordConfirm.focus();
-		}
+		
+		const exceptionCheckResult = that.exceptionCheck(); //예외처리 함수
+		if(!exceptionCheckResult) return ; 
+		
 		//HTTP BODY
 		const body = {
 			id: userId,
@@ -49,6 +45,11 @@ const join = {
 			if (res.status === 200 || res.status === 201) {
 				res.json().then(json => {
 					if(json.status===200){
+						if(json.response === "fail"){
+							console.log(json);
+							alert('회원가입 실패');	
+							return ;
+						}
 						alert('회원가입에 성공하였습니다.');
 						location.href="/";
 					}
@@ -57,6 +58,57 @@ const join = {
 				console.error(res.statusText);
 			}
 		}).catch(err => console.error(err));
+	},
+	exceptionCheck:()=>{ //회원가입할 때 아이디, 비밀번호,이름,이메일이 안써져있지는 않은지 체크
+		const $userId = document.querySelector("#userId");
+		const $userPassword = document.querySelector("#userPassword");
+		const $userPasswordConfirm = document.querySelector("#userPasswordConfirm");
+		const $username = document.querySelector("#username");
+		const $email = document.querySelector("#email");
+		
+		if($userId.value == "" || $userId.value==null){
+			alert('아이디를 입력해주세요.');
+			$userId.focus();
+			return false;
+		}
+		if($userPassword.value == "" || $userPassword.value == null){
+			alert('비밀번호를 입력해주세요.');
+			$userPassword.focus();
+			return false;
+		}
+		if($username.value == "" || $username.value == null){
+			alert('이름을 입력해주세요.');
+			$username.focus();
+			return false;
+		}
+		if($email.value == "" || $email.value == null){
+			alert('이메일을 입력해주세요.');
+			$email.focus();
+			return false;
+		}
+		/*
+		//비밀번호 체크 (근데 이미 회원가입 버튼을 disabled 시키니까 사용되지는 않을것.)
+		if ($userPassword.value !== $userPasswordConfirm.value) {
+			const $error_confirmpassword = document.querySelector("#error-confirmpassword"); //패스워드 다르다는 표시
+			$userPasswordConfirm.classList.add(".is-invalid"); //빨간색 테두리 표시
+			$error_confirmpassword.classList.remove("hide"); //패스워드 다르다는 표시
+			$userPasswordConfirm.focus();
+		}*/
+	}
+	
+}
+
+const update = {
+	init : function(){
+		const $updateForm = document.querySelector("#updateForm");
+		$updateForm.addEventListener("submit",(event)=>this.updateProc(this,event));
+	},
+	updateProc:(that,event)=>{
+		event.preventDefault();
+		const exceptionCheckResult = that.exceptionCheck();
+	},
+	exceptionCheck:()=>{
+		
 	}
 }
 
