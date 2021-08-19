@@ -48,6 +48,7 @@
 				</label>
 			</div>
 			<button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
+			<a href="#"><img class="mt-1" width="100%" height="47.6px" src="/img/strandard/kakao_login_large_wide.png"/></a>
 			<a href="/auth/joinForm" class="d-block mt-2">아직 회원이 아니신가요?</a>
 			<p class="mt-5 mb-3 text-muted">&copy; ILoveBlog</p>
 		</form>

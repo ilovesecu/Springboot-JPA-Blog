@@ -99,3 +99,510 @@
 2021-08-19 11:06:52.455  INFO 14812 --- [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-08-19 11:06:52.456  INFO 14812 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
 2021-08-19 11:06:52.458  INFO 14812 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-08-19 11:59:20.190  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Starting ILoveBlogApplication using Java 16.0.1 on DESKTOP-JUTAK19 with PID 18032 (D:\SpringBoot\workspace\ILoveBlog\target\classes started by ILovePC in D:\SpringBoot\workspace\ILoveBlog)
+2021-08-19 11:59:20.192 DEBUG 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Running with Spring Boot v2.5.3, Spring v5.3.9
+2021-08-19 11:59:20.192  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : No active profile set, falling back to default profiles: default
+2021-08-19 11:59:20.236  INFO 18032 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-08-19 11:59:20.237  INFO 18032 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-08-19 11:59:21.040  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-19 11:59:21.096  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2021-08-19 11:59:21.401  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@708ea3ae' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 11:59:21.406  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 11:59:21.709  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9490 (http)
+2021-08-19 11:59:21.719  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-19 11:59:21.720  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-19 11:59:21.966  INFO 18032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-19 11:59:21.976  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-19 11:59:21.976  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1739 ms
+2021-08-19 11:59:22.164  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-19 11:59:22.207  INFO 18032 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-19 11:59:22.318  INFO 18032 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-19 11:59:22.403  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-19 11:59:22.534  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-19 11:59:22.556  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-08-19 11:59:23.164  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-19 11:59:23.173  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 11:59:23.708  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@7375d761 with []
+2021-08-19 11:59:23.743  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@111f9a5e, org.springframework.security.web.context.SecurityContextPersistenceFilter@3111efb5, org.springframework.security.web.header.HeaderWriterFilter@585f7594, org.springframework.security.web.authentication.logout.LogoutFilter@41e3bf30, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@67cf2827, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e452218, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ed8fab3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@129dbcab, org.springframework.security.web.session.SessionManagementFilter@79b5446a, org.springframework.security.web.access.ExceptionTranslationFilter@1e933460, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64e24888]
+2021-08-19 11:59:23.952  INFO 18032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-19 11:59:24.112  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-19 11:59:24.171  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9490 (http) with context path ''
+2021-08-19 11:59:24.184  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Started ILoveBlogApplication in 4.413 seconds (JVM running for 5.168)
+2021-08-19 11:59:24.296  INFO 18032 --- [http-nio-9490-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-19 11:59:24.296  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-19 11:59:24.297  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-19 11:59:24.484 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 11:59:24.484 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 11:59:25.168 DEBUG 18032 --- [http-nio-9490-exec-2] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 11:59:25.169 DEBUG 18032 --- [http-nio-9490-exec-2] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:02:54.704 DEBUG 18032 --- [http-nio-9490-exec-5] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:02:54.704 DEBUG 18032 --- [http-nio-9490-exec-5] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:04:20.089  INFO 18032 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:04:20.092  INFO 18032 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-19 12:04:20.098  INFO 18032 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-19 12:04:20.185  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Starting ILoveBlogApplication using Java 16.0.1 on DESKTOP-JUTAK19 with PID 18032 (D:\SpringBoot\workspace\ILoveBlog\target\classes started by ILovePC in D:\SpringBoot\workspace\ILoveBlog)
+2021-08-19 12:04:20.185 DEBUG 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Running with Spring Boot v2.5.3, Spring v5.3.9
+2021-08-19 12:04:20.185  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : No active profile set, falling back to default profiles: default
+2021-08-19 12:04:20.341  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-19 12:04:20.356  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 3 JPA repository interfaces.
+2021-08-19 12:04:20.405  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6734fb17' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:04:20.406  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:04:20.452  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9490 (http)
+2021-08-19 12:04:20.453  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-19 12:04:20.453  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-19 12:04:20.525  INFO 18032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-19 12:04:20.528  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-19 12:04:20.528  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 340 ms
+2021-08-19 12:04:20.548  WARN 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [DAE785DD51B205279A03E905E9DE5FDD]
+2021-08-19 12:04:20.553 ERROR 18032 --- [restartedMain] o.a.catalina.session.StandardManager     : Exception loading sessions from persistent storage
+
+java.io.StreamCorruptedException: invalid type code: 00
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1720) ~[na:na]
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2554) ~[na:na]
+	at java.base/java.io.ObjectInputStream.defaultReadObject(ObjectInputStream.java:633) ~[na:na]
+	at java.base/java.lang.Throwable.readObject(Throwable.java:912) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at java.base/java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1224) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2378) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2212) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1689) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:495) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:453) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1565) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1050) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:219) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5247) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1398) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1388) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:921) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1398) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1388) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:921) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:437) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:934) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:160) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.9.jar:5.3.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) ~[spring-boot-2.5.3.jar:2.5.3]
+	at com.pg.iloveblog.ILoveBlogApplication.main(ILoveBlogApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.3.jar:2.5.3]
+
+2021-08-19 12:04:20.585  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-19 12:04:20.589  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-08-19 12:04:20.593  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-08-19 12:04:20.593  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-08-19 12:04:20.706  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-19 12:04:20.707  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:04:20.895  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@13e28e1e with []
+2021-08-19 12:04:20.912  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a633ce6, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f1b25d8, org.springframework.security.web.header.HeaderWriterFilter@6dfeb507, org.springframework.security.web.authentication.logout.LogoutFilter@1a02f8a0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1fbfff5b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ae17b59, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@322fa58f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a140c10, org.springframework.security.web.session.SessionManagementFilter@41c3fe69, org.springframework.security.web.access.ExceptionTranslationFilter@695d8456, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5bf4658e]
+2021-08-19 12:04:20.985  INFO 18032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-19 12:04:21.052  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-19 12:04:21.071  INFO 18032 --- [http-nio-9490-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-19 12:04:21.071  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9490 (http) with context path ''
+2021-08-19 12:04:21.071  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-19 12:04:21.072  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-08-19 12:04:21.077  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Started ILoveBlogApplication in 0.929 seconds (JVM running for 302.061)
+2021-08-19 12:04:21.079  INFO 18032 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-19 12:04:21.083 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:04:21.083 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:04:22.904  WARN 18032 --- [http-nio-9490-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "com.pg.iloveblog.config.auth.PrincipalDetail.getUser()" because "principalDetail" is null]
+2021-08-19 12:04:31.659  INFO 18032 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:04:31.659  INFO 18032 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-08-19 12:04:31.661  INFO 18032 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-08-19 12:04:31.753  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Starting ILoveBlogApplication using Java 16.0.1 on DESKTOP-JUTAK19 with PID 18032 (D:\SpringBoot\workspace\ILoveBlog\target\classes started by ILovePC in D:\SpringBoot\workspace\ILoveBlog)
+2021-08-19 12:04:31.754 DEBUG 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Running with Spring Boot v2.5.3, Spring v5.3.9
+2021-08-19 12:04:31.754  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : No active profile set, falling back to default profiles: default
+2021-08-19 12:04:31.899  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-19 12:04:31.913  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 3 JPA repository interfaces.
+2021-08-19 12:04:31.961  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7a949b80' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:04:31.963  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:04:32.011  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9490 (http)
+2021-08-19 12:04:32.012  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-19 12:04:32.012  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-19 12:04:32.083  INFO 18032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-19 12:04:32.085  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-19 12:04:32.085  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 329 ms
+2021-08-19 12:04:32.134  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-19 12:04:32.139  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-19 12:04:32.142  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-08-19 12:04:32.142  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-08-19 12:04:32.251  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-19 12:04:32.251  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:04:32.426  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@52e21766 with []
+2021-08-19 12:04:32.441  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@793e1310, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a515916, org.springframework.security.web.header.HeaderWriterFilter@1a56050f, org.springframework.security.web.authentication.logout.LogoutFilter@de4ea07, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2b50de5c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6891f908, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42c5e768, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6afa411a, org.springframework.security.web.session.SessionManagementFilter@6aacbb74, org.springframework.security.web.access.ExceptionTranslationFilter@73fa230f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d9c9ae2]
+2021-08-19 12:04:32.506  INFO 18032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-19 12:04:32.571  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-19 12:04:32.585  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9490 (http) with context path ''
+2021-08-19 12:04:32.586  INFO 18032 --- [http-nio-9490-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-19 12:04:32.586  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-19 12:04:32.588  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-19 12:04:32.590  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Started ILoveBlogApplication in 0.871 seconds (JVM running for 313.575)
+2021-08-19 12:04:32.592  INFO 18032 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-19 12:04:32.603 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:04:32.603 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:04:33.688 DEBUG 18032 --- [http-nio-9490-exec-6] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:04:33.689 DEBUG 18032 --- [http-nio-9490-exec-6] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:04:35.190  WARN 18032 --- [http-nio-9490-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "com.pg.iloveblog.config.auth.PrincipalDetail.getUser()" because "principalDetail" is null]
+2021-08-19 12:04:41.949 DEBUG 18032 --- [http-nio-9490-exec-3] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:04:41.949 DEBUG 18032 --- [http-nio-9490-exec-3] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:04:42.177  INFO 18032 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:04:42.178  INFO 18032 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-08-19 12:04:42.180  INFO 18032 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-08-19 12:04:42.253  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Starting ILoveBlogApplication using Java 16.0.1 on DESKTOP-JUTAK19 with PID 18032 (D:\SpringBoot\workspace\ILoveBlog\target\classes started by ILovePC in D:\SpringBoot\workspace\ILoveBlog)
+2021-08-19 12:04:42.253 DEBUG 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Running with Spring Boot v2.5.3, Spring v5.3.9
+2021-08-19 12:04:42.253  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : No active profile set, falling back to default profiles: default
+2021-08-19 12:04:42.392  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-19 12:04:42.407  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 3 JPA repository interfaces.
+2021-08-19 12:04:42.455  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3e73ebce' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:04:42.456  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:04:42.500  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9490 (http)
+2021-08-19 12:04:42.501  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-19 12:04:42.501  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-19 12:04:42.573  INFO 18032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-19 12:04:42.576  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-19 12:04:42.577  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 322 ms
+2021-08-19 12:04:42.621  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-19 12:04:42.624  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-08-19 12:04:42.628  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-08-19 12:04:42.628  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-08-19 12:04:42.721  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-19 12:04:42.722  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:04:42.923  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@7cbb1778 with []
+2021-08-19 12:04:42.940  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ea681b9, org.springframework.security.web.context.SecurityContextPersistenceFilter@6c3cee4, org.springframework.security.web.header.HeaderWriterFilter@5668237e, org.springframework.security.web.authentication.logout.LogoutFilter@38d9031c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@44c020c5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@fd57a91, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18b1cbc6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e2fc626, org.springframework.security.web.session.SessionManagementFilter@337171a1, org.springframework.security.web.access.ExceptionTranslationFilter@31470b16, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@22e29fca]
+2021-08-19 12:04:43.025  INFO 18032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-19 12:04:43.101  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-19 12:04:43.119  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9490 (http) with context path ''
+2021-08-19 12:04:43.123  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Started ILoveBlogApplication in 0.894 seconds (JVM running for 324.107)
+2021-08-19 12:04:43.124  INFO 18032 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-19 12:04:43.276  INFO 18032 --- [http-nio-9490-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-19 12:04:43.276  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-19 12:04:43.278  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-19 12:04:43.287 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:04:43.287 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:05:03.836  INFO 18032 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:05:03.836  INFO 18032 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-08-19 12:05:03.838  INFO 18032 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2021-08-19 12:05:03.908  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Starting ILoveBlogApplication using Java 16.0.1 on DESKTOP-JUTAK19 with PID 18032 (D:\SpringBoot\workspace\ILoveBlog\target\classes started by ILovePC in D:\SpringBoot\workspace\ILoveBlog)
+2021-08-19 12:05:03.909 DEBUG 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Running with Spring Boot v2.5.3, Spring v5.3.9
+2021-08-19 12:05:03.909  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : No active profile set, falling back to default profiles: default
+2021-08-19 12:05:04.036  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-19 12:05:04.049  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 3 JPA repository interfaces.
+2021-08-19 12:05:04.091  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@38a3066a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:05:04.092  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:05:04.135  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9490 (http)
+2021-08-19 12:05:04.136  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-19 12:05:04.136  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-19 12:05:04.200  INFO 18032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-19 12:05:04.202  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-19 12:05:04.202  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 292 ms
+2021-08-19 12:05:04.248  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-19 12:05:04.252  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2021-08-19 12:05:04.255  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2021-08-19 12:05:04.255  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-08-19 12:05:04.348  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-19 12:05:04.348  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:05:04.548  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@10735055 with []
+2021-08-19 12:05:04.566  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12d25e92, org.springframework.security.web.context.SecurityContextPersistenceFilter@25534ec9, org.springframework.security.web.header.HeaderWriterFilter@76d63231, org.springframework.security.web.authentication.logout.LogoutFilter@4d212c55, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7b26f203, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a746809, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6df480cc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c3f5366, org.springframework.security.web.session.SessionManagementFilter@2177d4f3, org.springframework.security.web.access.ExceptionTranslationFilter@73ff8ae0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@8fc27cb]
+2021-08-19 12:05:04.631  INFO 18032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-19 12:05:04.692  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-19 12:05:04.710  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9490 (http) with context path ''
+2021-08-19 12:05:04.713  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Started ILoveBlogApplication in 0.829 seconds (JVM running for 345.697)
+2021-08-19 12:05:04.714  INFO 18032 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-19 12:05:16.311  INFO 18032 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:05:16.312  INFO 18032 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2021-08-19 12:05:16.314  INFO 18032 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2021-08-19 12:05:16.387  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Starting ILoveBlogApplication using Java 16.0.1 on DESKTOP-JUTAK19 with PID 18032 (D:\SpringBoot\workspace\ILoveBlog\target\classes started by ILovePC in D:\SpringBoot\workspace\ILoveBlog)
+2021-08-19 12:05:16.388 DEBUG 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Running with Spring Boot v2.5.3, Spring v5.3.9
+2021-08-19 12:05:16.388  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : No active profile set, falling back to default profiles: default
+2021-08-19 12:05:16.519  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-19 12:05:16.531  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 3 JPA repository interfaces.
+2021-08-19 12:05:16.568  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@25a8a73c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:05:16.569  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:05:16.609  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9490 (http)
+2021-08-19 12:05:16.609  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-19 12:05:16.609  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-19 12:05:16.671  INFO 18032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-19 12:05:16.673  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-19 12:05:16.673  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 283 ms
+2021-08-19 12:05:16.715  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-19 12:05:16.719  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2021-08-19 12:05:16.722  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2021-08-19 12:05:16.722  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-08-19 12:05:16.809  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-19 12:05:16.809  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:05:17.014  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@163157c8 with []
+2021-08-19 12:05:17.043  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71e015cc, org.springframework.security.web.context.SecurityContextPersistenceFilter@b75fe82, org.springframework.security.web.header.HeaderWriterFilter@408af5d6, org.springframework.security.web.authentication.logout.LogoutFilter@5cc61e7f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3343c08c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@347bad95, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2348da89, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f681e3f, org.springframework.security.web.session.SessionManagementFilter@7635b8bf, org.springframework.security.web.access.ExceptionTranslationFilter@7629230a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@d7a211b]
+2021-08-19 12:05:17.112  INFO 18032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-19 12:05:17.182  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-19 12:05:17.194  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9490 (http) with context path ''
+2021-08-19 12:05:17.198  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Started ILoveBlogApplication in 0.837 seconds (JVM running for 358.181)
+2021-08-19 12:05:17.198  INFO 18032 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-19 12:05:19.338  INFO 18032 --- [http-nio-9490-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-19 12:05:19.338  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-19 12:05:19.339  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-19 12:05:19.648  INFO 18032 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:05:19.649  INFO 18032 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2021-08-19 12:05:19.651  INFO 18032 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2021-08-19 12:05:19.731  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Starting ILoveBlogApplication using Java 16.0.1 on DESKTOP-JUTAK19 with PID 18032 (D:\SpringBoot\workspace\ILoveBlog\target\classes started by ILovePC in D:\SpringBoot\workspace\ILoveBlog)
+2021-08-19 12:05:19.731 DEBUG 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Running with Spring Boot v2.5.3, Spring v5.3.9
+2021-08-19 12:05:19.731  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : No active profile set, falling back to default profiles: default
+2021-08-19 12:05:19.866  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-19 12:05:19.877  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 3 JPA repository interfaces.
+2021-08-19 12:05:19.917  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1a61bf26' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:05:19.918  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:05:19.972  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9490 (http)
+2021-08-19 12:05:19.972  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-19 12:05:19.972  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-19 12:05:20.038  INFO 18032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-19 12:05:20.039  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-19 12:05:20.040  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 307 ms
+2021-08-19 12:05:20.084  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-19 12:05:20.087  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2021-08-19 12:05:20.090  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2021-08-19 12:05:20.091  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-08-19 12:05:20.191  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-19 12:05:20.191  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:05:20.355  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@20766ca0 with []
+2021-08-19 12:05:20.372  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@435c549a, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e584bec, org.springframework.security.web.header.HeaderWriterFilter@1eb284c0, org.springframework.security.web.authentication.logout.LogoutFilter@3cb52d01, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5b5220ce, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27e0cc4b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2dfed8f3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@338887f4, org.springframework.security.web.session.SessionManagementFilter@1745431a, org.springframework.security.web.access.ExceptionTranslationFilter@7e9c317, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12da0786]
+2021-08-19 12:05:20.430  INFO 18032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-19 12:05:20.490  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-19 12:05:20.505  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9490 (http) with context path ''
+2021-08-19 12:05:20.509  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Started ILoveBlogApplication in 0.801 seconds (JVM running for 361.493)
+2021-08-19 12:05:20.510  INFO 18032 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-19 12:05:20.684  INFO 18032 --- [http-nio-9490-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-19 12:05:20.684  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-19 12:05:20.685  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-19 12:05:20.693 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:05:20.693 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:05:24.240 DEBUG 18032 --- [http-nio-9490-exec-2] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:05:24.240 DEBUG 18032 --- [http-nio-9490-exec-2] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:05:28.724 DEBUG 18032 --- [http-nio-9490-exec-3] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:05:28.724 DEBUG 18032 --- [http-nio-9490-exec-3] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:06:02.687  INFO 18032 --- [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:06:02.688  INFO 18032 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2021-08-19 12:06:02.690  INFO 18032 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2021-08-19 12:06:02.773  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Starting ILoveBlogApplication using Java 16.0.1 on DESKTOP-JUTAK19 with PID 18032 (D:\SpringBoot\workspace\ILoveBlog\target\classes started by ILovePC in D:\SpringBoot\workspace\ILoveBlog)
+2021-08-19 12:06:02.774 DEBUG 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Running with Spring Boot v2.5.3, Spring v5.3.9
+2021-08-19 12:06:02.774  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : No active profile set, falling back to default profiles: default
+2021-08-19 12:06:02.956  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-19 12:06:02.969  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 3 JPA repository interfaces.
+2021-08-19 12:06:03.013  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@16068152' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:06:03.015  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:06:03.062  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9490 (http)
+2021-08-19 12:06:03.062  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-19 12:06:03.062  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-19 12:06:03.143  INFO 18032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-19 12:06:03.145  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-19 12:06:03.145  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 370 ms
+2021-08-19 12:06:03.168  WARN 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [2E16271A2F7DE57842745DDCED71901F]
+2021-08-19 12:06:03.211  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-19 12:06:03.215  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2021-08-19 12:06:03.218  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2021-08-19 12:06:03.219  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-08-19 12:06:03.314  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-19 12:06:03.315  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:06:03.525  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@701071df with []
+2021-08-19 12:06:03.553  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37dbaeef, org.springframework.security.web.context.SecurityContextPersistenceFilter@76626957, org.springframework.security.web.header.HeaderWriterFilter@13f87ae, org.springframework.security.web.authentication.logout.LogoutFilter@32eae7a3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@753e1d14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@334a6269, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4eb59159, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a006d9a, org.springframework.security.web.session.SessionManagementFilter@13715f49, org.springframework.security.web.access.ExceptionTranslationFilter@8a9b89a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@60aea891]
+2021-08-19 12:06:03.634  INFO 18032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-19 12:06:03.716  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-19 12:06:03.731  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9490 (http) with context path ''
+2021-08-19 12:06:03.738  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Started ILoveBlogApplication in 0.988 seconds (JVM running for 404.722)
+2021-08-19 12:06:03.740  INFO 18032 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-19 12:06:04.227  INFO 18032 --- [http-nio-9490-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-19 12:06:04.227  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-19 12:06:04.228  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-19 12:06:06.344 DEBUG 18032 --- [http-nio-9490-exec-8] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:06:06.344 DEBUG 18032 --- [http-nio-9490-exec-8] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:06:18.438  INFO 18032 --- [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:06:18.439  INFO 18032 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2021-08-19 12:06:18.441  INFO 18032 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2021-08-19 12:06:18.537  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Starting ILoveBlogApplication using Java 16.0.1 on DESKTOP-JUTAK19 with PID 18032 (D:\SpringBoot\workspace\ILoveBlog\target\classes started by ILovePC in D:\SpringBoot\workspace\ILoveBlog)
+2021-08-19 12:06:18.537 DEBUG 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Running with Spring Boot v2.5.3, Spring v5.3.9
+2021-08-19 12:06:18.537  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : No active profile set, falling back to default profiles: default
+2021-08-19 12:06:18.682  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-19 12:06:18.694  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 3 JPA repository interfaces.
+2021-08-19 12:06:18.740  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6544c132' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:06:18.740  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 12:06:18.787  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9490 (http)
+2021-08-19 12:06:18.787  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-19 12:06:18.788  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-19 12:06:18.880  INFO 18032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-19 12:06:18.883  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-19 12:06:18.883  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 344 ms
+2021-08-19 12:06:18.912  WARN 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [24888BDEA729240236381977AD423D40]
+2021-08-19 12:06:18.946  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-19 12:06:18.952  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2021-08-19 12:06:18.955  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2021-08-19 12:06:18.955  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-08-19 12:06:19.050  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-19 12:06:19.050  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 12:06:19.239  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@60521ab8 with []
+2021-08-19 12:06:19.257  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62ce5c30, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e1a5f18, org.springframework.security.web.header.HeaderWriterFilter@7d350bc4, org.springframework.security.web.authentication.logout.LogoutFilter@4788b061, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7553d644, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5fb9942c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a87cf34, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@10949c5a, org.springframework.security.web.session.SessionManagementFilter@65429c44, org.springframework.security.web.access.ExceptionTranslationFilter@2f73cc23, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6021760b]
+2021-08-19 12:06:19.329  INFO 18032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-19 12:06:19.407  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-19 12:06:19.423  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9490 (http) with context path ''
+2021-08-19 12:06:19.428  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Started ILoveBlogApplication in 0.92 seconds (JVM running for 420.411)
+2021-08-19 12:06:19.429  INFO 18032 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-19 12:06:19.493  INFO 18032 --- [http-nio-9490-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-19 12:06:19.493  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-19 12:06:19.494  INFO 18032 --- [http-nio-9490-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-19 12:06:23.802 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:06:23.802 DEBUG 18032 --- [http-nio-9490-exec-1] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:06:24.868 DEBUG 18032 --- [http-nio-9490-exec-7] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:06:24.868 DEBUG 18032 --- [http-nio-9490-exec-7] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:06:27.964 DEBUG 18032 --- [http-nio-9490-exec-5] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:06:27.964 DEBUG 18032 --- [http-nio-9490-exec-5] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:06:30.838 DEBUG 18032 --- [http-nio-9490-exec-8] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:06:30.838 DEBUG 18032 --- [http-nio-9490-exec-8] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 12:06:33.933 DEBUG 18032 --- [http-nio-9490-exec-7] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 12:06:33.933 DEBUG 18032 --- [http-nio-9490-exec-7] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:05.174  WARN 18032 --- [HikariPool-9 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Thread starvation or clock leap detected (housekeeper delta=1h43m46s127ms243µs100ns).
+2021-08-19 13:50:18.773 DEBUG 18032 --- [http-nio-9490-exec-7] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:18.773 DEBUG 18032 --- [http-nio-9490-exec-7] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:21.399 DEBUG 18032 --- [http-nio-9490-exec-9] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:21.400 DEBUG 18032 --- [http-nio-9490-exec-9] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:27.628 DEBUG 18032 --- [http-nio-9490-exec-4] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:27.628 DEBUG 18032 --- [http-nio-9490-exec-4] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:29.058 DEBUG 18032 --- [http-nio-9490-exec-6] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:29.058 DEBUG 18032 --- [http-nio-9490-exec-6] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:32.036 DEBUG 18032 --- [http-nio-9490-exec-5] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:32.036 DEBUG 18032 --- [http-nio-9490-exec-5] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:32.946 DEBUG 18032 --- [http-nio-9490-exec-6] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:32.946 DEBUG 18032 --- [http-nio-9490-exec-6] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:33.715 DEBUG 18032 --- [http-nio-9490-exec-5] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:33.715 DEBUG 18032 --- [http-nio-9490-exec-5] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:36.595 DEBUG 18032 --- [http-nio-9490-exec-6] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:36.595 DEBUG 18032 --- [http-nio-9490-exec-6] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:49.198 DEBUG 18032 --- [http-nio-9490-exec-7] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:49.198 DEBUG 18032 --- [http-nio-9490-exec-7] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:49.369 DEBUG 18032 --- [http-nio-9490-exec-2] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:49.370 DEBUG 18032 --- [http-nio-9490-exec-2] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:50:59.396 DEBUG 18032 --- [http-nio-9490-exec-5] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:50:59.397 DEBUG 18032 --- [http-nio-9490-exec-5] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:02.163 DEBUG 18032 --- [http-nio-9490-exec-8] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:02.163 DEBUG 18032 --- [http-nio-9490-exec-8] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:06.130 DEBUG 18032 --- [http-nio-9490-exec-7] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:06.130 DEBUG 18032 --- [http-nio-9490-exec-7] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:07.488 DEBUG 18032 --- [http-nio-9490-exec-10] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:07.488 DEBUG 18032 --- [http-nio-9490-exec-10] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:08.178 DEBUG 18032 --- [http-nio-9490-exec-6] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:08.179 DEBUG 18032 --- [http-nio-9490-exec-6] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:11.897 DEBUG 18032 --- [http-nio-9490-exec-10] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:11.897 DEBUG 18032 --- [http-nio-9490-exec-10] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:15.187 DEBUG 18032 --- [http-nio-9490-exec-8] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:15.187 DEBUG 18032 --- [http-nio-9490-exec-8] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:17.876 DEBUG 18032 --- [http-nio-9490-exec-8] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:17.876 DEBUG 18032 --- [http-nio-9490-exec-8] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:20.423 DEBUG 18032 --- [http-nio-9490-exec-3] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:20.424 DEBUG 18032 --- [http-nio-9490-exec-3] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:21.046 DEBUG 18032 --- [http-nio-9490-exec-2] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:21.046 DEBUG 18032 --- [http-nio-9490-exec-2] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:21.826 DEBUG 18032 --- [http-nio-9490-exec-9] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:21.826 DEBUG 18032 --- [http-nio-9490-exec-9] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:22.395 DEBUG 18032 --- [http-nio-9490-exec-2] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:22.395 DEBUG 18032 --- [http-nio-9490-exec-2] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:22.666 DEBUG 18032 --- [http-nio-9490-exec-9] com.pg.iloveblog.service.BoardService    : currentPage:%d, totalContents:%d, 
+2021-08-19 13:51:22.666 DEBUG 18032 --- [http-nio-9490-exec-9] com.pg.iloveblog.service.BoardService    : endPage:%d, startPage:%d, realEndpage:%d 
+
+2021-08-19 13:51:48.257  INFO 18032 --- [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 13:51:48.258  INFO 18032 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2021-08-19 13:51:48.260  INFO 18032 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2021-08-19 13:51:48.363  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Starting ILoveBlogApplication using Java 16.0.1 on DESKTOP-JUTAK19 with PID 18032 (D:\SpringBoot\workspace\ILoveBlog\target\classes started by ILovePC in D:\SpringBoot\workspace\ILoveBlog)
+2021-08-19 13:51:48.363 DEBUG 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Running with Spring Boot v2.5.3, Spring v5.3.9
+2021-08-19 13:51:48.363  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : No active profile set, falling back to default profiles: default
+2021-08-19 13:51:48.530  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-19 13:51:48.543  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 3 JPA repository interfaces.
+2021-08-19 13:51:48.604  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3705c419' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 13:51:48.605  INFO 18032 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-19 13:51:48.662  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9490 (http)
+2021-08-19 13:51:48.662  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-19 13:51:48.662  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-19 13:51:48.742  INFO 18032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-19 13:51:48.743  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-19 13:51:48.743  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 378 ms
+2021-08-19 13:51:48.765  WARN 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [8F9EBD11B0AF98CEA7E76F9481C231F9]
+2021-08-19 13:51:48.800  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-19 13:51:48.805  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2021-08-19 13:51:48.808  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2021-08-19 13:51:48.808  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-08-19 13:51:48.902  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-19 13:51:48.902  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-19 13:51:49.118  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@678ea7e6 with []
+2021-08-19 13:51:49.142  INFO 18032 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2696d15b, org.springframework.security.web.context.SecurityContextPersistenceFilter@74e009e3, org.springframework.security.web.header.HeaderWriterFilter@14211ae9, org.springframework.security.web.authentication.logout.LogoutFilter@764c5ebf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6f9c324f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6634620b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7adeda76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@272eaa45, org.springframework.security.web.session.SessionManagementFilter@7d90b436, org.springframework.security.web.access.ExceptionTranslationFilter@769c9b57, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4e183651]
+2021-08-19 13:51:49.240  INFO 18032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-19 13:51:49.330  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-19 13:51:49.345  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9490 (http) with context path ''
+2021-08-19 13:51:49.349  INFO 18032 --- [restartedMain] com.pg.iloveblog.ILoveBlogApplication    : Started ILoveBlogApplication in 1.02 seconds (JVM running for 6750.344)
+2021-08-19 13:51:49.350  INFO 18032 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

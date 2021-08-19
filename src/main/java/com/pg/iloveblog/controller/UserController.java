@@ -12,8 +12,10 @@ import com.pg.iloveblog.config.auth.PrincipalDetail;
 public class UserController {
 	@GetMapping("/auth/loginForm")
 	public String loginForm(@RequestParam(value="error", required = false)String error,
-							@RequestParam(value="exception", required = false) String msg, 
+							@RequestParam(value="exception", required = false) String msg,
+							@AuthenticationPrincipal PrincipalDetail principalDetail,
 							ModelMap modelMap) {
+		if(principalDetail != null) return "redirect:/"; //이미 로그인이 되어있는 상태라면 / 로 요청하도록 설정.
 		modelMap.addAttribute("error",error);
 		modelMap.addAttribute("msg",msg);
 		return "user/loginForm";
