@@ -16,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Transient;
 
 import org.hibernate.annotations.ColumnDefault;
@@ -56,7 +57,8 @@ public class Board {
 	
 	@JsonIgnoreProperties({"board"})
 	@OneToMany(mappedBy = "board", fetch = FetchType.EAGER)  //mappedBy = FK만들지 마세요!
-	private List<Reply> reply;
+	@OrderBy("no desc")
+	private List<Reply> replys;
 	
 	@JsonIgnoreProperties({"board"})
 	@OneToMany(mappedBy = "board", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
