@@ -9,10 +9,12 @@ const passwordCheck = {
 			const $userPWConfirm = document.querySelector("#userPasswordConfirm");
 			//const $passwordToggleBtn = document.querySelector("#button-append1");
 			//const $passwordConfirmToggleBtn = document.querySelector("#button-append2");
-
-			$userPW.addEventListener("keyup", passwordEventHandler);
-			$userPW.addEventListener("focusout", passwordFocusOutHandler);
-			$userPWConfirm.addEventListener("focusout", passwordFocusOutHandler);
+			
+			if($userPW!=null){
+				$userPW.addEventListener("keyup", passwordEventHandler);
+				$userPW.addEventListener("focusout", passwordFocusOutHandler);
+				$userPWConfirm.addEventListener("focusout", passwordFocusOutHandler);
+			}
 			//$passwordToggleBtn.addEventListener("click",togglePassword);
 			//$passwordConfirmToggleBtn.addEventListener("click",togglePassword);
 		});

@@ -43,3 +43,5 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false   
+oauth:
+  key: kakao1234

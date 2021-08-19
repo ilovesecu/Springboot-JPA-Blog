@@ -107,20 +107,24 @@ const update = {
 	updateProc:(that,event)=>{
 		event.preventDefault();
 		const userNo = document.querySelector("#userNo").value; //어떤 회원인지 hidden으로 숨겨놓음.
+		const oauth = document.querySelector("#oauth").value; //oauth로 로그인한 회원인지에 따라서 회원수정 로직이 달라진다.
 		const userId = document.querySelector("#userId").value;
-		const userPassword = document.querySelector("#userPassword").value;
-		const userPasswordConfirm = document.querySelector("#userPasswordConfirm").value;
-		const username = document.querySelector("#username").value;
-		const email = document.querySelector("#email").value;
-		const oldPassword = document.querySelector("#oldPassword").value;
-		
-		const exceptionCheckResult = that.exceptionCheck();
+		const userPassword = document.querySelector("#userPassword")?.value;
+		const userPasswordConfirm = document.querySelector("#userPasswordConfirm")?.value;
+		const username = document.querySelector("#username")?.value;
+		const email = document.querySelector("#email")?.value;
+		const oldPassword = document.querySelector("#oldPassword")?.value;
+		let exceptionCheckResult = true;
+		if(oauth===""){
+			exceptionCheckResult = that.exceptionCheck();
+		}
 		if(!exceptionCheckResult) return ;
 		
 		//HTTP BODY
 		const body = {
 			no:userNo,
 			id: userId,
+			oauth:oauth,
 			password: userPassword, 
 			name:username,
 			email:email,

@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.persistence.EntityNotFoundException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,23 +48,36 @@ public class UserService {
 			return new IllegalArgumentException("해당 no의 회원을 찾을 수 없습니다. no:"+reqUser.getNo());
 		});
 		
-		//기존 패스워드 체크
-		if(!encoder.matches(reqUser.getOldPassword(), user.getPassword())) {
-			return new ResponseDTO<Map<String,Object>>(HttpStatus.FORBIDDEN.value(),Collections.singletonMap("error", "기존 비밀번호가 다릅니다."));
+		//oauth가 없는 사람만 패스워드를 수정하도록 변경한다.
+		if(reqUser.getOauth()==null || reqUser.getOauth().equals("")) {
+			//기존 패스워드 체크
+			if(!encoder.matches(reqUser.getOldPassword(), user.getPassword())) {
+				return new ResponseDTO<Map<String,Object>>(HttpStatus.FORBIDDEN.value(),Collections.singletonMap("error", "기존 비밀번호가 다릅니다."));
+			}
+			
+			//새로운 비밀번호가 들어있다면 비밀번호도 변경해준다.
+			if(reqUser.getPassword()!=null && !reqUser.getPassword().equals("")) {
+				String rawPassword = reqUser.getPassword();
+				String encPassword = encoder.encode(rawPassword);
+				user.setPassword(encPassword);
+			}
 		}
 		
-		//새로운 비밀번호가 들어있다면 비밀번호도 변경해준다.
-		if(reqUser.getPassword()!=null && !reqUser.getPassword().equals("")) {
-			String rawPassword = reqUser.getPassword();
-			String encPassword = encoder.encode(rawPassword);
-			user.setPassword(encPassword);
-		}
 		user.setEmail(reqUser.getEmail());
 		user.setName(reqUser.getName());
 		
 		result.put("response","success");
 		return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(),result);
 	}
+	
+	@Transactional(readOnly = true)
+	public User 아아디로회원찾기(String id) {
+		User user = userRepository.findUserId(id).orElseGet(()->{
+			return new User();
+		}); 
+		return user;
+	}
+	
 	
 	
 }

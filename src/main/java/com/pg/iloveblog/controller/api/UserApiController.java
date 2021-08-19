@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -27,6 +28,8 @@ public class UserApiController {
 	private UserService userService;
 	@Resource
 	private AuthenticationManager authenticationManager;
+	@Value("${oauth.key}") //application.yml 에서 주입받는다.
+	private String oauthKey;
 	
 	@PostMapping("/auth/joinProc")
 	public ResponseDTO<Map<String,Object>> save(@RequestBody User reqUser){
@@ -45,10 +48,12 @@ public class UserApiController {
 	@PutMapping("/user")
 	public ResponseDTO<Map<String,Object>> update(@RequestBody User reqUser){
 		Map<String,Object> result = new HashMap<String,Object>();
-		boolean exceptionCheckResult = exceptionUpdate(reqUser,result); //예외처리 진행
-		if(!exceptionCheckResult) {
-			result.put("response","fail");
-			return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(),result);
+		if(reqUser.getOauth()==null || reqUser.getOauth().equals("")) {
+			boolean exceptionCheckResult = exceptionUpdate(reqUser,result); //예외처리 진행
+			if(!exceptionCheckResult) {
+				result.put("response","fail");
+				return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(),result);
+			}
 		}
 		//회원수정 진행
 		ResponseDTO<Map<String,Object>> res = userService.회원수정(reqUser,result);
@@ -56,13 +61,18 @@ public class UserApiController {
 		if(res.getStatus() == 200)semiAutoLoginProc(reqUser); 
 		return res;
 	}
-	
+	//회원 수정 한 다음 다시 로그인 해준다.
 	private void semiAutoLoginProc(User user) {
-		String password = "";
-		if(user.getPassword()!=null && !user.getPassword().equals("")) password = user.getPassword();
-		else password = user.getOldPassword();
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getId(), password));
-		SecurityContextHolder.getContext().setAuthentication(authentication);
+		if(user.getOauth()==null || user.getOauth().equals("")) {
+			String password = "";
+			if(user.getPassword()!=null && !user.getPassword().equals("")) password = user.getPassword();
+			else password = user.getOldPassword();
+			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getId(), password));
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+		}else {
+			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getId(), oauthKey));
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+		}
 	}
 	
 	//회원가입 빈칸 예외처리

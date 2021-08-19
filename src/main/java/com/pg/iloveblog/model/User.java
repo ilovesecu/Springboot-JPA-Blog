@@ -29,7 +29,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //yml파일 use-new-id-generator-mappings: false
 	private int no;
 	
-	@Column(nullable = false, length = 30, unique = true)
+	@Column(nullable = false, length = 40, unique = true)
 	private String id;
 	
 	@Column(nullable = false, length = 100)
