@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,6 +32,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		return new BCryptPasswordEncoder();
 	}
 	
+	@Bean
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
+
 	@Override //시큐리티가 대신 로그인을 해주기 위해서 id와 password를 가로채는데 password가 뭘로 해쉬화 되어있는지 모르니까 그것을 알려주기위함
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		//userDetailService라는 실제로 로그인을 진행하는 메소드(직접 구현)에게 패스워드 해쉬함수를 전달해주면된다.
