@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -46,5 +47,7 @@ public class Reply {
 	@UpdateTimestamp
 	private Timestamp updateDate;
 	
+	@Transient //테이블에 적용하지 마세요!
+	private String dateDisplayed;  //표시되는 날짜(yyyy-MM-dd or HH:mm:ss)
 	
 }

@@ -52,24 +52,26 @@
 							</div>
 						</form>
 						<!-- Single comment-->
-						<c:forEach var="reply" items="${board.replys }">
-							<div class="d-flex" data-no=${board.no }>
-								<div class="flex-shrink-0">
-									<img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
-								</div>
-								<div class="ms-3">
-									<span class="fw-bold">${reply.user.id } </span>
-									<span class="badge" style="color:black;">${reply.createDate }</span> 
-									<div>
-										${reply.content }
+						<div id="comments">
+							<c:forEach var="reply" items="${board.replys }">
+								<div class="d-flex" data-no=${board.no }>
+									<div class="flex-shrink-0">
+										<img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
 									</div>
-									<div>
-										<button class="btn">답글달기</button>
-										<button class="btn">삭제</button>
+									<div class="ms-3">
+										<span class="fw-bold">${reply.user.id } </span>
+										<span class="badge" style="color:black;">${reply.createDate }</span> 
+										<div>
+											${reply.content }
+										</div>
+										<div>
+											<button class="btn">답글달기</button>
+											<button class="btn">삭제</button>
+										</div>
 									</div>
 								</div>
-							</div>
-						</c:forEach>
+							</c:forEach>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -113,7 +115,7 @@
 </div>
 
 <!-- Template -->
-<script  type="template"  id="replyTemplate">
+<script type="template" id="replyTemplate">
 	<div class="d-flex" data-no={{no}}>
 		<div class="flex-shrink-0">
 			<img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
@@ -132,7 +134,6 @@
 	</div>
 </script>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha512-fujQJs+fkj7+Az7XKDxMLbVuuaeljjqMQDh3TAI7nYKQMQhEztrmyuex6hlnRuttjXJ9BFvnl4r/t8r8L6gFfA==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha512-fujQJs+fkj7+Az7XKDxMLbVuuaeljjqMQDh3TAI7nYKQMQhEztrmyuex6hlnRuttjXJ9BFvnl4r/t8r8L6gFfA==" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/js/board.js"></script>
 <%@ include file="../layout/footer.jsp"%>

@@ -179,5 +179,27 @@ public class BoardService {
 		}
 		return attachFiles;
 	}
+	/*
+	private void 날짜형식바꾸기(List<Reply> replys) {
+		SimpleDateFormat sdfOld = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat sdfToDay = new SimpleDateFormat("HH:mm:ss");
+		String dateDisplayed = null;
+		try {
+			Date toDay = sdfOld.parse(sdfOld.format(new Date()));
+			for(Reply reply : replys) {
+					Date boardDate = board.getCreateDate();
+					Date boardDateToCompare=sdfOld.parse(sdfOld.format(boardDate));
+					int compare=boardDateToCompare.compareTo(toDay);
+					if(compare==0) { //같다 (음수라면 과거)
+						dateDisplayed=sdfToDay.format(boardDate);
+					}else {
+						dateDisplayed=sdfOld.format(boardDate);
+					}
+					board.setDateDisplayed(dateDisplayed);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}*/
 	
 }

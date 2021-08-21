@@ -71,7 +71,7 @@ public class BoardApiController {
 	public ResponseDTO<Map<String,Object>> replySave(@PathVariable int no){
 		Map<String,Object> result = new HashMap<>();
 		List<Reply>replys=boardService.댓글보기(no);
-		result.put("data",replys);
+		result.put("replys",replys);
 		return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(),result);
 	}
 	

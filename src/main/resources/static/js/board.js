@@ -147,6 +147,9 @@ let board = {
 		}).catch(err => alert('댓글 작성 실패.',err));
 	},
 	refreshReply:(no)=>{ //댓글 새로고침
+		const template = document.querySelector("#replyTemplate").innerText; //댓글 템플릿 
+		const $comments = document.querySelector("#comments");
+			
 		//HTTP HEADER
 		const headers = new Headers();
 		headers.append('Content-type','application/json; charset=utf-8');
@@ -160,6 +163,13 @@ let board = {
 				res.json().then(json => {
 					if(json.status===200){
 						console.log(json);
+						const replys=json.data.replys;
+						const bindTemplate = Handlebars.compile(template); //메서드가 반환되므로 bindTemplate는 메서드이다.
+						let resultHTML = replys.reduce(function(prev,next){
+							return prev + bindTemplate(next);
+						},"");
+						console.log(resultHTML);
+						$comments.innerHTML = resultHTML;
 					}
 				});
 			} else {
