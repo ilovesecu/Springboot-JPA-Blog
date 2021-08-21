@@ -43,17 +43,17 @@
 				<div class="card bg-light">
 					<div class="card-body">
 						<!-- Comment form-->
-						<form class="mb-4">
+						<form class="mb-4" id="replySaveForm">
 							<input type="hidden" id="boardNo" value="${board.no}" />
 							<div class="input-group">
 							  <textarea class="form-control" rows="3" id="replyContent" 
 							  	placeholder="댓글을 남겨보세요!"></textarea>
-							  <button id="btnReplySave" class="btn btn-primary">댓글등록</button>
+							  <button type="submit" class="btn btn-primary">댓글등록</button>
 							</div>
 						</form>
 						<!-- Single comment-->
 						<c:forEach var="reply" items="${board.replys }">
-							<div class="d-flex">
+							<div class="d-flex" data-no=${board.no }>
 								<div class="flex-shrink-0">
 									<img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
 								</div>
@@ -112,5 +112,27 @@
   </div>
 </div>
 
-<<script type="text/javascript" src="/js/board.js"></script>
+<!-- Template -->
+<script  type="template"  id="replyTemplate">
+	<div class="d-flex" data-no={{no}}>
+		<div class="flex-shrink-0">
+			<img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
+		</div>
+		<div class="ms-3">
+			<span class="fw-bold">{{user.id}} </span>
+			<span class="badge" style="color:black;">{{createDate}}</span> 
+			<div>
+				{{content}}
+			</div>
+			<div>
+				<button class="btn">답글달기</button>
+				<button class="btn">삭제</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha512-fujQJs+fkj7+Az7XKDxMLbVuuaeljjqMQDh3TAI7nYKQMQhEztrmyuex6hlnRuttjXJ9BFvnl4r/t8r8L6gFfA==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/board.js"></script>
 <%@ include file="../layout/footer.jsp"%>

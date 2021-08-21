@@ -4,6 +4,7 @@ let board = {
 		const btnDelete = document.querySelector("#btn-delete");
 		const deleteModal = document.querySelector("#deleteModal");
 		const btnUpdate = document.querySelector("#btn-update"); 
+		const replySaveForm = document.querySelector("#replySaveForm"); 
 		if(btnSave!=null)
 			btnSave.addEventListener("click",this.boardSave);
 		if(btnDelete!=null)
@@ -14,6 +15,8 @@ let board = {
 		}
 		if(btnUpdate!=null)
 			btnUpdate.addEventListener("click",()=>this.boardUpdate(this));
+		if(replySaveForm!=null)
+			replySaveForm.addEventListener("submit",(event)=>this.replySave(this,event));
 	},
 	boardSave: ()=>{
 		const $title = document.querySelector("#title");
@@ -109,6 +112,61 @@ let board = {
 			}
 		}).catch(err => alert('수정 실패.',err));
 		
+	},
+	replySave:(that,event)=>{ //댓글 작성
+		event.preventDefault();
+		const no = document.querySelector("#boardNo").value; //어떤 글의 댓글인지 판단을 위함
+		const $replyContent = document.querySelector("#replyContent");
+		
+		//HTTP BODY
+		const body = {
+			content: $replyContent.value
+		};
+		
+		//HTTP HEADER
+		const headers = new Headers();
+		headers.append('Content-type','application/json; charset=utf-8');
+		
+		//Request To Server
+		fetch(`/api/board/${no}/reply`, {
+			method: 'POST',
+			body:JSON.stringify(body),
+			headers: headers, 
+		}).then((res) => {
+			if (res.status === 200 || res.status === 201) {
+				res.json().then(json => {
+					if(json.status===200){
+						alert('댓글 작성이 완료되었습니다.');
+						that.refreshReply(no);
+					}
+				});
+			} else {
+				alert('댓글 작성 실패.');
+				console.error(res.statusText);
+			}
+		}).catch(err => alert('댓글 작성 실패.',err));
+	},
+	refreshReply:(no)=>{ //댓글 새로고침
+		//HTTP HEADER
+		const headers = new Headers();
+		headers.append('Content-type','application/json; charset=utf-8');
+		
+		//Request To Server
+		fetch(`/api/board/${no}/reply`, {
+			method: 'GET',
+			headers: headers
+		}).then((res) => {
+			if (res.status === 200 || res.status === 201) {
+				res.json().then(json => {
+					if(json.status===200){
+						console.log(json);
+					}
+				});
+			} else {
+				alert('댓글 작성 실패.');
+				console.error(res.statusText);
+			}
+		}).catch(err => alert('댓글 작성 실패.',err));
 	},
 	shownBsModalHandler: ()=>{ //삭제 모달창 생성 시
 		const screenBlock = document.querySelector("#screenBlock");

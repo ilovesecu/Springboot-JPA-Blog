@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.persistence.EntityNotFoundException;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,9 +18,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.pg.iloveblog.dto.BoardPagenationDTO;
 import com.pg.iloveblog.model.AttachFile;
 import com.pg.iloveblog.model.Board;
+import com.pg.iloveblog.model.Reply;
 import com.pg.iloveblog.model.User;
 import com.pg.iloveblog.repository.AttachFileRepository;
 import com.pg.iloveblog.repository.BoardRepository;
+import com.pg.iloveblog.repository.ReplyRepository;
 
 import jdk.internal.org.jline.utils.Log;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +32,8 @@ import lombok.extern.slf4j.Slf4j;
 public class BoardService {
 	@Resource
 	private BoardRepository boardRepository;
+	@Resource
+	private ReplyRepository replyRepository;
 	@Resource
 	private AttachFileRepository attachFileRepository;
 	private final int DISPLAY_PAGE_NUMBER = 10;
@@ -130,6 +135,21 @@ public class BoardService {
 		}catch(Exception e) {
 			return 0;
 		}
+	}
+	
+	@Transactional
+	public void 댓글쓰기(User user, int boardNo, Reply reply) {
+		reply.setUser(user);
+		Board board = boardRepository.findById(boardNo).orElseThrow(()->{
+			return new EntityNotFoundException("댓글쓰기 실패: 해당 no의 게시글을 찾을 수 없습니다. no:"+boardNo);
+		});
+		reply.setBoard(board);
+		replyRepository.save(reply);
+	}
+	@Transactional(readOnly = true)
+	public List<Reply> 댓글보기(int no) {
+		List<Reply>replys = replyRepository.findAllByBoardNo(no);
+		return replys;
 	}
 	
 	private void 첨부파일삭제(List<AttachFile> attahcFiles) {

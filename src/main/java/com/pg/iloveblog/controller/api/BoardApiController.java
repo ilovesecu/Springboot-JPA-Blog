@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -23,6 +24,7 @@ import com.pg.iloveblog.dto.ResponseDTO;
 import com.pg.iloveblog.handler.FileHandler;
 import com.pg.iloveblog.model.AttachFile;
 import com.pg.iloveblog.model.Board;
+import com.pg.iloveblog.model.Reply;
 import com.pg.iloveblog.service.BoardService;
 
 import jdk.internal.org.jline.utils.Log;
@@ -55,6 +57,22 @@ public class BoardApiController {
 	@DeleteMapping("/board/{no}")
 	public ResponseDTO<Integer> deleteBoardByNo(@PathVariable int no){
 		return new ResponseDTO<Integer>(HttpStatus.OK.value(),boardService.글삭제하기(no));
+	}
+	
+	@PostMapping("/board/{no}/reply") //댓글 작성
+	public ResponseDTO<Integer> replySave(@PathVariable int no,
+										  @RequestBody Reply reply,
+										  @AuthenticationPrincipal PrincipalDetail principal){
+		boardService.댓글쓰기(principal.getUser(),no,reply);
+		return new ResponseDTO<Integer>(HttpStatus.OK.value(),1);
+	}
+	
+	@GetMapping("/board/{no}/reply") //댓글 조회
+	public ResponseDTO<Map<String,Object>> replySave(@PathVariable int no){
+		Map<String,Object> result = new HashMap<>();
+		List<Reply>replys=boardService.댓글보기(no);
+		result.put("data",replys);
+		return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(),result);
 	}
 	
 	@PostMapping("/file")
