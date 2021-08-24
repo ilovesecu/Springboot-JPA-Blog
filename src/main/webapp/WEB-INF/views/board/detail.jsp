@@ -52,21 +52,23 @@
 							</div>
 						</form>
 						<!-- Single comment-->
-						<div id="comments">
+						<div id="comments" data-boardNo="${board.no }">
 							<c:forEach var="reply" items="${board.replys }">
-								<div class="d-flex" data-no=${board.no }>
+								<div class="d-flex">
 									<div class="flex-shrink-0">
 										<img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
 									</div>
 									<div class="ms-3">
 										<span class="fw-bold">${reply.user.id } </span>
-										<span class="badge" style="color:black;">${reply.createDate }</span> 
+										<span class="badge" style="color:black;">${reply.dateDisplayed }</span> 
 										<div>
 											${reply.content }
 										</div>
 										<div>
 											<button class="btn">답글달기</button>
-											<button class="btn">삭제</button>
+											<c:if test="${principal.user.id == reply.user.id }">
+												<button class="btn deleteReply" data-replyNo="${reply.no}">삭제</button>
+											</c:if>
 										</div>
 									</div>
 								</div>
@@ -122,13 +124,15 @@
 		</div>
 		<div class="ms-3">
 			<span class="fw-bold">{{user.id}} </span>
-			<span class="badge" style="color:black;">{{createDate}}</span> 
+			<span class="badge" style="color:black;">{{dateDisplayed}}</span> 
 			<div>
 				{{content}}
 			</div>
 			<div>
 				<button class="btn">답글달기</button>
-				<button class="btn">삭제</button>
+				{{#isSameUser user.id}}
+					<button class="btn deleteReply" data-replyNo={{no}} >삭제</button>
+				{{/isSameUser}}
 			</div>
 		</div>
 	</div>

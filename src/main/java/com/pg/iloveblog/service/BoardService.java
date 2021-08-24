@@ -98,6 +98,7 @@ public class BoardService {
 		Board board = boardRepository.findById(no).orElseThrow(()->{
 			return new IllegalArgumentException("글상세보기 실패: 해당 no를 찾을 수 없습니다. no:"+no);
 		});
+		날짜형식바꾸기(board.getReplys());
 		return board;
 	}
 	
@@ -139,16 +140,24 @@ public class BoardService {
 	
 	@Transactional
 	public void 댓글쓰기(User user, int boardNo, Reply reply) {
-		reply.setUser(user);
+		/*reply.setUser(user);
 		Board board = boardRepository.findById(boardNo).orElseThrow(()->{
 			return new EntityNotFoundException("댓글쓰기 실패: 해당 no의 게시글을 찾을 수 없습니다. no:"+boardNo);
 		});
 		reply.setBoard(board);
-		replyRepository.save(reply);
+		replyRepository.save(reply);*/
+		replyRepository.replySave(reply.getContent(),user.getNo(),boardNo);
 	}
-	@Transactional(readOnly = true)
+	
+	@Transactional
+	public void 댓글삭제(int replyNo) {
+		replyRepository.deleteById(replyNo);
+	}
+	
+	@Transactional(readOnly = true) 
 	public List<Reply> 댓글보기(int no) {
 		List<Reply>replys = replyRepository.findAllByBoardNo(no);
+		날짜형식바꾸기(replys);
 		return replys;
 	}
 	
@@ -179,27 +188,29 @@ public class BoardService {
 		}
 		return attachFiles;
 	}
-	/*
+	
 	private void 날짜형식바꾸기(List<Reply> replys) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat sdfOld = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat sdfToDay = new SimpleDateFormat("HH:mm:ss");
 		String dateDisplayed = null;
 		try {
-			Date toDay = sdfOld.parse(sdfOld.format(new Date()));
+			Date toDay = sdf.parse(sdf.format(new Date()));
+			
 			for(Reply reply : replys) {
-					Date boardDate = board.getCreateDate();
-					Date boardDateToCompare=sdfOld.parse(sdfOld.format(boardDate));
-					int compare=boardDateToCompare.compareTo(toDay);
+				 	Date replyDate = reply.getCreateDate();
+					Date replyDateToCompare=sdfOld.parse(sdfOld.format(replyDate));
+					int compare=replyDateToCompare.compareTo(toDay); //오늘 날짜와 비교
 					if(compare==0) { //같다 (음수라면 과거)
-						dateDisplayed=sdfToDay.format(boardDate);
+						dateDisplayed=sdfToDay.format(replyDate);
 					}else {
-						dateDisplayed=sdfOld.format(boardDate);
+						dateDisplayed=sdfOld.format(replyDate);
 					}
-					board.setDateDisplayed(dateDisplayed);
+					reply.setDateDisplayed(dateDisplayed);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-	}*/
+	}
 	
 }

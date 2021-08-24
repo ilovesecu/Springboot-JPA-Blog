@@ -67,11 +67,18 @@ public class BoardApiController {
 		return new ResponseDTO<Integer>(HttpStatus.OK.value(),1);
 	}
 	
+	@DeleteMapping("/board/{boardNo}/reply/{replyNo}") //댓글 삭제
+	public ResponseDTO<Integer> replyDelete(@PathVariable int replyNo){
+		boardService.댓글삭제(replyNo);
+		return new ResponseDTO<Integer>(HttpStatus.OK.value(),1);
+	}
+	
 	@GetMapping("/board/{no}/reply") //댓글 조회
-	public ResponseDTO<Map<String,Object>> replySave(@PathVariable int no){
+	public ResponseDTO<Map<String,Object>> replySave(@PathVariable int no,@AuthenticationPrincipal PrincipalDetail principal){
 		Map<String,Object> result = new HashMap<>();
 		List<Reply>replys=boardService.댓글보기(no);
 		result.put("replys",replys);
+		result.put("principal", principal.getUser().getId()); //현재 로그인한 사용자를 주어야 Handlebar를 사용하여 삭제버튼을 만들지 말지 정할 수 있다.
 		return new ResponseDTO<Map<String,Object>>(HttpStatus.OK.value(),result);
 	}
 	
