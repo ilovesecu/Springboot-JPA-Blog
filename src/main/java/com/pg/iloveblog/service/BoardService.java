@@ -150,8 +150,13 @@ public class BoardService {
 	}
 	
 	@Transactional
-	public void 댓글삭제(int replyNo) {
-		replyRepository.deleteById(replyNo);
+	public void 댓글삭제(int replyNo, User user) {
+		Reply reply = replyRepository.findById(replyNo).orElseThrow(()->{
+			return new EntityNotFoundException("댓글을 찾을 수 없습니다. replyNo:"+replyNo);
+		});
+		//댓글 작성자만 삭제할 수 있도록 한다.
+		if(reply.getUser().getId().equals(user.getId()))
+			replyRepository.deleteById(replyNo);
 	}
 	
 	@Transactional(readOnly = true) 

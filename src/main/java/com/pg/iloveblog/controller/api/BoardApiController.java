@@ -68,8 +68,8 @@ public class BoardApiController {
 	}
 	
 	@DeleteMapping("/board/{boardNo}/reply/{replyNo}") //댓글 삭제
-	public ResponseDTO<Integer> replyDelete(@PathVariable int replyNo){
-		boardService.댓글삭제(replyNo);
+	public ResponseDTO<Integer> replyDelete(@PathVariable int replyNo, @AuthenticationPrincipal PrincipalDetail principal){
+		boardService.댓글삭제(replyNo, principal.getUser());
 		return new ResponseDTO<Integer>(HttpStatus.OK.value(),1);
 	}
 	
